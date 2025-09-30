@@ -3,13 +3,15 @@ import { geminiAPI } from '../api/gemini';
 import ChatMessage from '../components/ChatMessage';
 import ChatInput from '../components/ChatInput';
 import PopularQuestions from '../components/PopularQuestions';
-import { FaRobot, FaSpinner } from 'react-icons/fa';
+import VoiceAssistant from '../components/VoiceAssistant';
+import { FaRobot, FaSpinner, FaKeyboard, FaMicrophone } from 'react-icons/fa';
 
 const ChatbotPage = () => {
   const [sessionId, setSessionId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('text'); // 'text' or 'voice'
   const messagesEndRef = useRef(null);
 
   // Initialize session on mount
@@ -116,60 +118,100 @@ const ChatbotPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 h-full">
         {/* Main Chat Area */}
         <div className="lg:col-span-3 bg-white rounded-xl shadow-lg flex flex-col h-full">
-          {/* Chat Header */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 rounded-t-xl flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="bg-white bg-opacity-20 p-2 rounded-full">
-                <FaRobot size={24} />
+          {/* Chat Header with Tabs */}
+          <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-4 rounded-t-xl">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-3">
+                <div className="bg-white bg-opacity-20 p-2 rounded-full">
+                  <FaRobot size={24} />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold">Krishi Sakhi</h2>
+                  <p className="text-sm text-primary-100">AI Agricultural Assistant</p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-xl font-bold">Krishi Sakhi</h2>
-                <p className="text-sm text-primary-100">AI Agricultural Assistant</p>
-              </div>
+            </div>
+            
+            {/* Tab Navigation */}
+            <div className="flex space-x-2">
+              <button
+                onClick={() => setActiveTab('text')}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+                  activeTab === 'text'
+                    ? 'bg-white text-primary-600'
+                    : 'bg-white/20 text-white hover:bg-white/30'
+                }`}
+              >
+                <FaKeyboard />
+                <span>Text Chat</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('voice')}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+                  activeTab === 'voice'
+                    ? 'bg-white text-primary-600'
+                    : 'bg-white/20 text-white hover:bg-white/30'
+                }`}
+              >
+                <FaMicrophone />
+                <span>Voice Assistant</span>
+              </button>
             </div>
           </div>
 
-          {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-            {messages.map((message) => (
-              <ChatMessage
-                key={message.id}
-                message={message}
-                onFeedback={handleFeedback}
-              />
-            ))}
-            
-            {isLoading && (
-              <div className="flex items-center space-x-2 text-gray-500">
-                <FaSpinner className="animate-spin" />
-                <span className="text-sm">Thinking...</span>
+          {/* Content Area - Text or Voice */}
+          {activeTab === 'text' ? (
+            <>
+              {/* Messages Container */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+                {messages.map((message) => (
+                  <ChatMessage
+                    key={message.id}
+                    message={message}
+                    onFeedback={handleFeedback}
+                  />
+                ))}
+                
+                {isLoading && (
+                  <div className="flex items-center space-x-2 text-gray-500">
+                    <FaSpinner className="animate-spin" />
+                    <span className="text-sm">Thinking...</span>
+                  </div>
+                )}
+                
+                {error && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    {error}
+                  </div>
+                )}
+                
+                <div ref={messagesEndRef} />
               </div>
-            )}
-            
-            {error && (
-              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                {error}
-              </div>
-            )}
-            
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* Chat Input */}
-          <div className="border-t border-gray-200 p-4 bg-white rounded-b-xl">
-            <ChatInput
-              onSendMessage={handleSendMessage}
-              disabled={!sessionId || isLoading}
+              {/* Chat Input */}
+              <div className="border-t border-gray-200 p-4 bg-white rounded-b-xl">
+                <ChatInput
+                  onSendMessage={handleSendMessage}
+                  disabled={!sessionId || isLoading}
+                />
+              </div>
+            </>
+          ) : (
+            /* Voice Assistant */
+            <div className="flex-1 bg-gray-50">
+              <VoiceAssistant />
+            </div>
+          )}
+        </div>
+
+        {/* Sidebar - Popular Questions (only for text chat) */}
+        {activeTab === 'text' && (
+          <div className="lg:col-span-1">
+            <PopularQuestions
+              onQuestionClick={handleQuickQuestion}
             />
           </div>
-        </div>
-
-        {/* Sidebar - Popular Questions */}
-        <div className="lg:col-span-1">
-          <PopularQuestions
-            onQuestionClick={handleQuickQuestion}
-          />
-        </div>
+        )}
       </div>
     </div>
   );

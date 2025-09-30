@@ -29,6 +29,7 @@ export const chatAPI = {
       sessionId,
       language: context.language || 'en',
       context,
+      isVoice: context.isVoice || false
     });
     return response.data;
   },

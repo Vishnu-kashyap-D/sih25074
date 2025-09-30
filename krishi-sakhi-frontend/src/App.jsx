@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import { LanguageProvider } from './context/LanguageContext';
+import HomePage from './pages/HomePage';
 import FarmAnalysisPage from './pages/FarmAnalysisPage';
 import CropAnalysisPage from './pages/CropAnalysisPage';
 import ChatbotPage from './pages/ChatbotPage';
@@ -11,10 +12,11 @@ import WeatherPage from './pages/WeatherPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ProfilePage from './pages/ProfilePage';
+import CommunityPage from './pages/CommunityPage';
 
 function App() {
   const location = useLocation();
-  const hideNavigation = location.pathname === '/login' || location.pathname === '/signup';
+  const hideNavigation = location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/';
 
   return (
     <LanguageProvider>
@@ -25,14 +27,16 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/" element={<FarmAnalysisPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/farm-analysis" element={<FarmAnalysisPage />} />
           <Route path="/crop-analysis" element={<CropAnalysisPage />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
           <Route path="/marketplace" element={<MarketplacePage />} />
           <Route path="/marketplace/:id" element={<div className="p-8">Product Detail Coming Soon</div>} />
           <Route path="/marketplace/create" element={<div className="p-8">Create Product Coming Soon</div>} />
           <Route path="/weather" element={<WeatherPage />} />
+          <Route path="/community" element={<CommunityPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </div>
     </LanguageProvider>

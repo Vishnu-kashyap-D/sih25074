@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs').promises;
-const cropAnalysisService = require('../services/cropAnalysisService');
+const cropAnalysisService = require('../src/services/cropAnalysisService');
 
 // Configure multer for file upload
 const storage = multer.memoryStorage();
@@ -56,16 +56,10 @@ const analyzeCropImage = async (req, res) => {
         
         console.log(`Analyzing crop image: ${req.file.originalname}, Size: ${req.file.size} bytes`);
         
-        // Analyze the image
-        const analysisResult = await cropAnalysisService.analyzeCropImage(
-          req.file.buffer,
-          {
-            filename: req.file.originalname,
-            mimetype: req.file.mimetype,
-            size: req.file.size,
-            cropType: cropType,
-            userId: userId
-          }
+        // Analyze the image using the service
+        const analysisResult = await cropAnalysisService.processImageWithAI(
+          req.file.originalname,
+          req.file.buffer
         );
         
         res.json({
@@ -107,39 +101,14 @@ const getAnalysisHistory = async (req, res) => {
       });
     }
     
-    // For now, return mock history
-    const mockHistory = [
-      {
-        id: '1',
-        timestamp: new Date(Date.now() - 86400000),
-        cropType: 'Tomato',
-        healthScore: 85,
-        qualityGrade: 'A',
-        issuesFound: 2
-      },
-      {
-        id: '2',
-        timestamp: new Date(Date.now() - 172800000),
-        cropType: 'Rice',
-        healthScore: 92,
-        qualityGrade: 'A+',
-        issuesFound: 0
-      },
-      {
-        id: '3',
-        timestamp: new Date(Date.now() - 259200000),
-        cropType: 'Wheat',
-        healthScore: 78,
-        qualityGrade: 'B',
-        issuesFound: 3
-      }
-    ];
+    // Get history from service
+    const history = await cropAnalysisService.getAnalysisHistory(userId);
     
     res.json({
       success: true,
       data: {
-        history: mockHistory,
-        total: mockHistory.length,
+        history: history,
+        total: history.length,
         limit: parseInt(limit),
         offset: parseInt(offset)
       }
@@ -158,28 +127,12 @@ const getAnalysisHistory = async (req, res) => {
 // Get supported crop types
 const getSupportedCrops = async (req, res) => {
   try {
-    const supportedCrops = [
-      { id: 'tomato', name: 'Tomato', category: 'Vegetable' },
-      { id: 'rice', name: 'Rice', category: 'Cereal' },
-      { id: 'wheat', name: 'Wheat', category: 'Cereal' },
-      { id: 'maize', name: 'Maize', category: 'Cereal' },
-      { id: 'potato', name: 'Potato', category: 'Vegetable' },
-      { id: 'onion', name: 'Onion', category: 'Vegetable' },
-      { id: 'cotton', name: 'Cotton', category: 'Cash Crop' },
-      { id: 'sugarcane', name: 'Sugarcane', category: 'Cash Crop' },
-      { id: 'tea', name: 'Tea', category: 'Plantation' },
-      { id: 'coffee', name: 'Coffee', category: 'Plantation' },
-      { id: 'pepper', name: 'Black Pepper', category: 'Spice' },
-      { id: 'cardamom', name: 'Cardamom', category: 'Spice' }
-    ];
-    
-    const categories = [...new Set(supportedCrops.map(crop => crop.category))];
+    const supportedCrops = cropAnalysisService.getSupportedCrops();
     
     res.json({
       success: true,
       data: {
         crops: supportedCrops,
-        categories: categories,
         total: supportedCrops.length
       }
     });

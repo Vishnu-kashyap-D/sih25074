@@ -11,7 +11,7 @@ const { testConnection, initializeDatabase } = require('./config/db');
 const analysisRoutes = require('./routes/analysisRoutes');
 
 // Only import new routes if they exist
-let authRoutes, chatRoutes, marketplaceRoutes, weatherRoutes, languageRoutes, cropAnalysisRoutes;
+let authRoutes, chatRoutes, marketplaceRoutes, weatherRoutes, languageRoutes, cropAnalysisRoutes, communityRoutes;
 try {
   authRoutes = require('./routes/authRoutes');
   chatRoutes = require('./routes/chatRoutes');
@@ -19,6 +19,7 @@ try {
   weatherRoutes = require('./routes/weatherRoutes');
   languageRoutes = require('./routes/languageRoutes');
   cropAnalysisRoutes = require('./routes/cropAnalysisRoutes');
+  communityRoutes = require('./routes/communityRoutes');
 } catch (error) {
   console.warn('Some routes not available:', error.message);
 }
@@ -67,6 +68,9 @@ if (languageRoutes) {
 }
 if (cropAnalysisRoutes) {
   app.use('/api/crop-analysis', cropAnalysisRoutes); // Crop analysis
+}
+if (communityRoutes) {
+  app.use('/api/community', communityRoutes); // Community features
 }
 
 // Root route

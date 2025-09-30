@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaLeaf, FaComments, FaStore, FaCloudSun, FaBars, FaTimes, FaUser, FaMicroscope } from 'react-icons/fa';
+import { FaHome, FaLeaf, FaComments, FaStore, FaCloudSun, FaBars, FaTimes, FaUser, FaMicroscope, FaUsers } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 
 const Navigation = () => {
@@ -15,11 +15,13 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { path: '/', label: translate('farmAnalysis', 'Farm Analysis'), icon: FaLeaf },
+    { path: '/', label: translate('home', 'Home'), icon: FaHome },
+    { path: '/farm-analysis', label: translate('farmAnalysis', 'Farm Analysis'), icon: FaLeaf },
     { path: '/crop-analysis', label: translate('cropAnalysis', 'Crop Analysis'), icon: FaMicroscope },
     { path: '/chatbot', label: translate('chatbot', 'AI Assistant'), icon: FaComments },
     { path: '/marketplace', label: translate('marketplace', 'Marketplace'), icon: FaStore },
     { path: '/weather', label: translate('weather', 'Weather'), icon: FaCloudSun },
+    { path: '/community', label: translate('community', 'Community'), icon: FaUsers },
   ];
   
   // Add profile if logged in

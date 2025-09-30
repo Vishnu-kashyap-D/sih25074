@@ -35,8 +35,8 @@ const LoginPage = () => {
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('auth_token', 'mock-token-' + user.id);
         
-        // Redirect to home
-        navigate('/');
+        // Redirect to farm analysis dashboard
+        navigate('/farm-analysis');
       } else {
         setError('Email not found. Please sign up first.');
       }
@@ -50,7 +50,7 @@ const LoginPage = () => {
 
   const handleGuestLogin = () => {
     // Allow guest access without authentication
-    navigate('/');
+    navigate('/farm-analysis');
   };
 
   return (

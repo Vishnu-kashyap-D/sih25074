@@ -15,7 +15,7 @@ const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 // Agriculture-specific system prompt
 const SYSTEM_PROMPT = `
-You are Krishi Sakhi (കൃഷി സഖി), an intelligent agricultural assistant for Indian farmers. You provide expert advice on:
+You are Krishi Sakhi (कृषि सखी), an intelligent agricultural assistant for Indian farmers. You provide expert advice on:
 - Crop selection and cultivation practices
 - Soil health and fertilizer recommendations
 - Pest and disease management
@@ -38,11 +38,28 @@ Guidelines:
 Context: You're helping farmers in India, primarily in Kerala, but also across other states. Consider monsoon seasons, local crops like rice, coconut, spices, vegetables, and traditional farming practices.
 `;
 
+// Voice-specific system prompt
+const VOICE_SYSTEM_PROMPT = `
+You are Krishi Sakhi (कृषि सखी), a voice-based agricultural assistant for Indian farmers. You are listening to farmers speaking in their local dialect and providing spoken responses.
+
+Guidelines for voice responses:
+1. Keep responses concise and clear for speech
+2. Use simple, conversational language
+3. Avoid technical jargon unless necessary
+4. Structure responses for easy listening
+5. Acknowledge the farmer's query first
+6. Provide step-by-step instructions when needed
+7. Speak in the same language as the query when possible
+8. End with a clear next step or question
+
+Remember: Your response will be spoken aloud, so make it natural and easy to understand.
+`;
+
 // Get model instance
-const getModel = () => {
+const getModel = (isVoice = false) => {
   return genAI.getGenerativeModel({ 
     model: "gemini-1.5-flash",
-    systemInstruction: SYSTEM_PROMPT
+    systemInstruction: isVoice ? VOICE_SYSTEM_PROMPT : SYSTEM_PROMPT
   });
 };
 
@@ -50,10 +67,15 @@ const getModel = () => {
 const generateResponse = async (message, context = {}) => {
   try {
     const startTime = Date.now();
-    const model = getModel();
+    const model = getModel(context.isVoice);
 
     // Build context-aware prompt
     let contextPrompt = message;
+    
+    // Add voice context if applicable
+    if (context.isVoice) {
+      contextPrompt = `Voice Query in ${context.language || 'Hindi'}: "${message}"\n\nProvide a clear, spoken response.`;
+    }
     
     if (context.farmLocation) {
       contextPrompt += `\n\nFarm location: ${context.farmLocation.state || ''}, ${context.farmLocation.district || ''} (${context.farmLocation.lat}, ${context.farmLocation.lng})`;
@@ -184,6 +206,34 @@ const getRecentMessages = async (sessionId, limit = 5) => {
 // Process chat request
 const processChatRequest = async (sessionId, userMessage, user = null, context = {}) => {
   try {
+    // If ChatMessage model is not available, use mock data
+    if (!ChatMessage) {
+      console.log('Using mock chat without database');
+      const mockUserMessage = {
+        id: `user-${Date.now()}`,
+        sessionId,
+        type: 'user',
+        message: userMessage,
+        created_at: new Date().toISOString()
+      };
+      
+      // Generate AI response
+      const aiResponse = await generateResponse(userMessage, context);
+      
+      const mockBotMessage = {
+        id: `bot-${Date.now()}`,
+        sessionId,
+        type: 'bot',
+        message: aiResponse.message,
+        created_at: new Date().toISOString(),
+        metadata: aiResponse.metadata
+      };
+      
+      return {
+        userMessage: mockUserMessage,
+        botMessage: mockBotMessage
+      };
+    }
     // Save user message
     const userMessageData = {
       sessionId,
@@ -290,11 +340,42 @@ const getPopularQuestions = () => {
   ];
 };
 
+// Process voice request with dialect handling
+const processVoiceRequest = async (sessionId, voiceMessage, user = null, context = {}) => {
+  try {
+    // Enhanced context for voice queries
+    const voiceContext = {
+      ...context,
+      isVoice: true,
+      language: context.language || 'hi-IN',
+      queryTime: context.queryTime || new Date().toISOString()
+    };
+
+    // Process as regular chat but with voice context
+    const result = await processChatRequest(sessionId, voiceMessage, user, voiceContext);
+
+    // Enhance response for voice
+    if (result.botMessage && result.botMessage.message) {
+      // Add voice-specific formatting if needed
+      result.botMessage.message = result.botMessage.message
+        .replace(/\n\n/g, '. ') // Replace double newlines with periods for better speech
+        .replace(/\n/g, ', ') // Replace single newlines with commas
+        .replace(/[*_]/g, ''); // Remove markdown formatting
+    }
+
+    return result;
+  } catch (error) {
+    console.error('Error processing voice request:', error);
+    throw error;
+  }
+};
+
 module.exports = {
   generateResponse,
   saveChatMessage,
   getChatHistory,
   processChatRequest,
+  processVoiceRequest,
   updateMessageFeedback,
   getPopularQuestions,
   getRecentMessages

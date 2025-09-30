@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 // Send message to chatbot
 const sendMessage = async (req, res) => {
   try {
-    const { message, sessionId, language, context } = req.body;
+    const { message, sessionId, language, context, isVoice } = req.body;
     const user = req.user; // From auth middleware (optional)
 
     // Validation
@@ -23,16 +23,29 @@ const sendMessage = async (req, res) => {
       farmLocation: context?.farmLocation || user?.location,
       cropType: context?.cropType,
       season: context?.season,
-      farmSize: context?.farmSize || user?.farmDetails?.totalAcres
+      farmSize: context?.farmSize || user?.farmDetails?.totalAcres,
+      isVoice: isVoice || false,
+      queryTime: new Date().toISOString()
     };
 
-    // Process chat request
-    const result = await chatbotService.processChatRequest(
-      chatSessionId,
-      message,
-      user,
-      chatContext
-    );
+    // Process chat request with voice context if applicable
+    let result;
+    if (isVoice) {
+      // For voice queries, add voice-specific processing
+      result = await chatbotService.processVoiceRequest(
+        chatSessionId,
+        message,
+        user,
+        chatContext
+      );
+    } else {
+      result = await chatbotService.processChatRequest(
+        chatSessionId,
+        message,
+        user,
+        chatContext
+      );
+    }
 
     res.json({
       success: true,
@@ -40,8 +53,10 @@ const sendMessage = async (req, res) => {
         sessionId: chatSessionId,
         userMessage: result.userMessage,
         botMessage: result.botMessage,
-        context: chatContext
-      }
+        context: chatContext,
+        isVoice: isVoice || false
+      },
+      response: result.botMessage.message // For compatibility with voice assistant
     });
 
   } catch (error) {
