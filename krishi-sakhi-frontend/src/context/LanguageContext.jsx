@@ -93,6 +93,7 @@ export const LanguageProvider = ({ children }) => {
     en: {
       // Navigation
       farmAnalysis: 'Farm Analysis',
+      cropAnalysis: 'Crop Analysis',
       chatbot: 'AI Assistant',
       marketplace: 'Marketplace',
       weather: 'Weather',
@@ -129,6 +130,7 @@ export const LanguageProvider = ({ children }) => {
     hi: {
       // Navigation
       farmAnalysis: 'फार्म विश्लेषण',
+      cropAnalysis: 'फसल विश्लेषण',
       chatbot: 'AI सहायक',
       marketplace: 'बाज़ार',
       weather: 'मौसम',
@@ -165,6 +167,7 @@ export const LanguageProvider = ({ children }) => {
     ta: {
       // Navigation
       farmAnalysis: 'பண்ணை பகுப்பாய்வு',
+      cropAnalysis: 'பயிர் பகுப்பாய்வு',
       chatbot: 'AI உதவியாளர்',
       marketplace: 'சந்தை',
       weather: 'வானிலை',
@@ -201,6 +204,7 @@ export const LanguageProvider = ({ children }) => {
     te: {
       // Navigation
       farmAnalysis: 'వ్యవసాయ విశ్లేషణ',
+      cropAnalysis: 'పంట విశ్లేషణ',
       chatbot: 'AI సహాయకుడు',
       marketplace: 'మార్కెట్‌ప్లేస్',
       weather: 'వాతావరణం',
@@ -237,6 +241,7 @@ export const LanguageProvider = ({ children }) => {
     kn: {
       // Navigation
       farmAnalysis: 'ಕೃಷಿ ವಿಶ್ಲೇಷಣೆ',
+      cropAnalysis: 'ಬೆಳೆ ವಿಶ್ಲೇಷಣೆ',
       chatbot: 'AI ಸಹಾಯಕ',
       marketplace: 'ಮಾರುಕಟ್ಟೆ',
       weather: 'ಹವಾಮಾನ',
@@ -273,6 +278,7 @@ export const LanguageProvider = ({ children }) => {
     gu: {
       // Navigation
       farmAnalysis: 'ખેતી વિશ્લેષણ',
+      cropAnalysis: 'પાક વિશ્લેષણ',
       chatbot: 'AI સહાયક',
       marketplace: 'બજાર',
       weather: 'હવામાન',
@@ -309,6 +315,7 @@ export const LanguageProvider = ({ children }) => {
     mr: {
       // Navigation
       farmAnalysis: 'शेती विश्लेषण',
+      cropAnalysis: 'पीक विश्लेषण',
       chatbot: 'AI सहाय्यक',
       marketplace: 'बाजारपेठ',
       weather: 'हवामान',
@@ -345,6 +352,7 @@ export const LanguageProvider = ({ children }) => {
     pa: {
       // Navigation
       farmAnalysis: 'ਖੇਤੀ ਵਿਸ਼ਲੇਸ਼ਣ',
+      cropAnalysis: 'ਫਸਲ ਵਿਸ਼ਲੇਸ਼ਣ',
       chatbot: 'AI ਸਹਾਇਕ',
       marketplace: 'ਬਾਜ਼ਾਰ',
       weather: 'ਮੌਸਮ',
@@ -381,6 +389,7 @@ export const LanguageProvider = ({ children }) => {
     bn: {
       // Navigation
       farmAnalysis: 'কৃষি বিশ্লেষণ',
+      cropAnalysis: 'ফসল বিশ্লেষণ',
       chatbot: 'AI সহায়ক',
       marketplace: 'বাজার',
       weather: 'আবহাওয়া',
@@ -417,6 +426,7 @@ export const LanguageProvider = ({ children }) => {
     or: {
       // Navigation
       farmAnalysis: 'କୃଷି ବିଶ୍ଳେଷଣ',
+      cropAnalysis: 'ଫସଲ ବିଶ୍ଳେଷଣ',
       chatbot: 'AI ସହାୟକ',
       marketplace: 'ବଜାର',
       weather: 'ପାଗ',

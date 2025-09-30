@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import { LanguageProvider } from './context/LanguageContext';
 import FarmAnalysisPage from './pages/FarmAnalysisPage';
+import CropAnalysisPage from './pages/CropAnalysisPage';
 import ChatbotPage from './pages/ChatbotPage';
 import MarketplacePage from './pages/MarketplacePage';
 import WeatherPage from './pages/WeatherPage';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/" element={<FarmAnalysisPage />} />
+          <Route path="/crop-analysis" element={<CropAnalysisPage />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
           <Route path="/marketplace" element={<MarketplacePage />} />
           <Route path="/marketplace/:id" element={<div className="p-8">Product Detail Coming Soon</div>} />
