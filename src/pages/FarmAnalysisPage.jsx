@@ -47,32 +47,25 @@ const FarmAnalysisPage = () => {
               acres: farmArea 
             },
             land_cover: {
-              class: "Agricultural Land",
-              malayalam: "കൃഷിഭൂമി"
+              class: "Agricultural Land"
             },
             vegetation_index: {
               ndvi: 0.78,
-              remark: "Healthy Vegetation",
-              malayalam: "ആരോഗ്യകരമായ സസ്യങ്ങൾ"
+              remark: "Healthy Vegetation"
             },
             soil_properties: {
               texture: "Sandy Loam",
-              malayalam_texture: "മണൽ കലർന്ന പശിമരാശി മണ്ണ്",
               ph: 6.2,
               organic_carbon_percent: 1.1,
             },
             nutrient_levels: {
               nitrogen: "Low",
               phosphorus: "Medium",
-              potassium: "High",
-              malayalam_nitrogen: "കുറവ്",
-              malayalam_phosphorus: "ഇടത്തരം",
-              malayalam_potassium: "ഉയർന്നത്"
+              potassium: "High"
             },
             groundwater: {
               depth_meters: 15,
-              availability: "Good",
-              malayalam_availability: "നല്ല ലഭ്യത"
+              availability: "Good"
             }
           };
           

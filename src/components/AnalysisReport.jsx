@@ -23,7 +23,6 @@ const AnalysisReport = ({ data }) => {
       <div className="text-center mb-6">
         <div className="text-3xl mb-2">📊</div>
         <h2 className="text-xl font-bold text-gray-800">Farm Analysis Report</h2>
-        <p className="text-sm text-gray-600">കൃഷിഭൂമി വിശകലന റിപ്പോർട്ട്</p>
       </div>
 
       <div className="space-y-4">
@@ -31,7 +30,6 @@ const AnalysisReport = ({ data }) => {
         <ReportCard
           icon="🌾"
           title="Land Cover"
-          malayalam="ഭൂമിയുടെ ഉപയോഗം"
           value={data.land_cover.class}
           color="green"
         />
@@ -40,8 +38,7 @@ const AnalysisReport = ({ data }) => {
         <ReportCard
           icon="🌱"
           title="Soil Type"
-          malayalam="മണ്ണിന്റെ തരം"
-          value={data.soil_properties.malayalam_texture}
+          value={data.soil_properties.texture}
           color="primary"
         />
 
@@ -49,8 +46,7 @@ const AnalysisReport = ({ data }) => {
         <ReportCard
           icon="🍃"
           title="Vegetation Health"
-          malayalam="സസ്യങ്ങളുടെ ആരോഗ്യം"
-          value={`${data.vegetation_index.malayalam} (NDVI: ${data.vegetation_index.ndvi})`}
+          value={`${data.vegetation_index.remark} (NDVI: ${data.vegetation_index.ndvi})`}
           color="green"
         />
 
@@ -58,8 +54,7 @@ const AnalysisReport = ({ data }) => {
         <ReportCard
           icon="💧"
           title="Groundwater"
-          malayalam="ഭൂഗർഭജലം"
-          value={`${data.groundwater.depth_meters}m depth - ${data.groundwater.malayalam_availability}`}
+          value={`${data.groundwater.depth_meters}m depth - ${data.groundwater.availability}`}
           color="blue"
         />
 
@@ -67,26 +62,23 @@ const AnalysisReport = ({ data }) => {
         <ReportCard
           icon="⚗️"
           title="Soil pH"
-          malayalam="മണ്ണിന്റെ pH"
           value={data.soil_properties.ph}
           color="primary"
         />
 
         {/* Nutrients Section */}
         <div className="mt-6">
-          <h3 className="text-lg font-bold text-gray-800 mb-4">Nutrient Levels / പോഷക അളവുകൾ</h3>
+          <h3 className="text-lg font-bold text-gray-800 mb-4">Nutrient Levels</h3>
           
           {/* Nitrogen */}
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-semibold text-gray-700">
-                Nitrogen / നൈട്രജൻ
-              </span>
+              <span className="text-sm font-semibold text-gray-700">Nitrogen</span>
               <span className={`text-sm font-bold ${
                 getNutrientColor(data.nutrient_levels.nitrogen) === 'green' ? 'text-green-600' :
                 getNutrientColor(data.nutrient_levels.nitrogen) === 'yellow' ? 'text-yellow-600' : 'text-red-600'
               }`}>
-                {data.nutrient_levels.malayalam_nitrogen}
+                {data.nutrient_levels.nitrogen}
               </span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
@@ -97,14 +89,12 @@ const AnalysisReport = ({ data }) => {
           {/* Phosphorus */}
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-semibold text-gray-700">
-                Phosphorus / ഫോസ്ഫറസ്
-              </span>
+              <span className="text-sm font-semibold text-gray-700">Phosphorus</span>
               <span className={`text-sm font-bold ${
                 getNutrientColor(data.nutrient_levels.phosphorus) === 'green' ? 'text-green-600' :
                 getNutrientColor(data.nutrient_levels.phosphorus) === 'yellow' ? 'text-yellow-600' : 'text-red-600'
               }`}>
-                {data.nutrient_levels.malayalam_phosphorus}
+                {data.nutrient_levels.phosphorus}
               </span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
@@ -115,14 +105,12 @@ const AnalysisReport = ({ data }) => {
           {/* Potassium */}
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-semibold text-gray-700">
-                Potassium / പൊട്ടാസിയം
-              </span>
+              <span className="text-sm font-semibold text-gray-700">Potassium</span>
               <span className={`text-sm font-bold ${
                 getNutrientColor(data.nutrient_levels.potassium) === 'green' ? 'text-green-600' :
                 getNutrientColor(data.nutrient_levels.potassium) === 'yellow' ? 'text-yellow-600' : 'text-red-600'
               }`}>
-                {data.nutrient_levels.malayalam_potassium}
+                {data.nutrient_levels.potassium}
               </span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">

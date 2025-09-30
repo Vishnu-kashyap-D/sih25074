@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReportCard = ({ icon, title, value, malayalam, color = "primary" }) => {
+const ReportCard = ({ icon, title, value, color = "primary" }) => {
   const colorClasses = {
     primary: "border-primary-200 bg-primary-50",
     green: "border-green-200 bg-green-50",
@@ -15,7 +15,6 @@ const ReportCard = ({ icon, title, value, malayalam, color = "primary" }) => {
         <div className="text-2xl">{icon}</div>
         <div className="flex-1">
           <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
-          {malayalam && <p className="text-xs text-gray-600 mb-1">{malayalam}</p>}
           <p className="font-bold text-gray-900">{value}</p>
         </div>
       </div>

@@ -96,7 +96,6 @@ const MarketplacePage = () => {
         <div>
           <h1 className="text-3xl font-bold text-gray-800">
             Marketplace
-            <span className="text-lg text-gray-500 ml-2">(മാർക്കറ്റ്)</span>
           </h1>
           <p className="text-gray-600 mt-1">
             Buy and sell agricultural products

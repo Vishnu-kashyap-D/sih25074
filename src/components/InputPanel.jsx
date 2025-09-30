@@ -15,7 +15,7 @@ const InputPanel = ({ selectedLocation, farmArea, setFarmArea, onAnalyze, isLoad
       <div className="text-center">
         <div className="text-4xl mb-2">🌾</div>
         <h2 className="text-xl font-bold text-gray-800 mb-1">Farm Analysis</h2>
-        <p className="text-sm text-gray-600">കൃഷിഭൂമി വിശകലനം</p>
+        <p className="text-sm text-gray-600">Analyze your farmland</p>
       </div>
 
       {/* Location Status */}
@@ -24,7 +24,6 @@ const InputPanel = ({ selectedLocation, farmArea, setFarmArea, onAnalyze, isLoad
           <div className="text-center text-gray-500">
             <div className="text-2xl mb-2">📍</div>
             <p className="text-sm font-medium">Click on the map to select your farm location</p>
-            <p className="text-xs text-gray-400 mt-1">നിങ്ങളുടെ കൃഷിഭൂമിയുടെ സ്ഥാനം തിരഞ്ഞെടുക്കുക</p>
           </div>
         ) : (
           <div className="text-center text-green-600 slide-in">
@@ -41,7 +40,7 @@ const InputPanel = ({ selectedLocation, farmArea, setFarmArea, onAnalyze, isLoad
       {selectedLocation && (
         <div className="slide-in">
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Farm Area (Acres) / ഭൂമിയുടെ വിസ്തൃതി (ഏക്കർ)
+            Farm Area (Acres)
           </label>
           <div className="flex items-center space-x-3">
             <button
@@ -95,7 +94,7 @@ const InputPanel = ({ selectedLocation, farmArea, setFarmArea, onAnalyze, isLoad
             )}
           </button>
           <p className="text-xs text-gray-500 text-center mt-2">
-            This may take a few seconds / ഇത് കുറച്ച് സമയമെടുത്തേക്കാം
+            This may take a few seconds
           </p>
         </div>
       )}

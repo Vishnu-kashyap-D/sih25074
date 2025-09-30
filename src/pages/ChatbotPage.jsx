@@ -9,7 +9,6 @@ const ChatbotPage = () => {
   const [sessionId, setSessionId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [language, setLanguage] = useState('en');
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
 
@@ -38,9 +37,7 @@ const ChatbotPage = () => {
         {
           id: 'welcome',
           type: 'bot',
-          message: language === 'ml' 
-            ? 'നമസ്കാരം! ഞാൻ കൃഷി സഖി, നിങ്ങളുടെ കൃഷി സഹായി. എനിക്ക് എങ്ങനെ സഹായിക്കാം?'
-            : 'Hello! I am Krishi Sakhi, your agricultural assistant. How can I help you today?',
+          message: 'Hello! I am Krishi Sakhi, your agricultural assistant. How can I help you today?',
           created_at: new Date().toISOString(),
         },
       ]);
@@ -66,7 +63,7 @@ const ChatbotPage = () => {
 
     try {
       // Use Gemini API with conversation history
-      const response = await geminiAPI.sendMessage(messageText, messages, language);
+      const response = await geminiAPI.sendMessage(messageText, messages);
       
       if (response.success) {
         const botMessage = {
@@ -100,10 +97,6 @@ const ChatbotPage = () => {
     handleSendMessage(question);
   };
 
-  const handleLanguageToggle = () => {
-    setLanguage((prev) => (prev === 'en' ? 'ml' : 'en'));
-  };
-
   const handleFeedback = async (messageId, helpful) => {
     try {
       // For now, just update the UI state
@@ -130,21 +123,10 @@ const ChatbotPage = () => {
                 <FaRobot size={24} />
               </div>
               <div>
-                <h2 className="text-xl font-bold">
-                  {language === 'ml' ? 'കൃഷി സഖി' : 'Krishi Sakhi'}
-                </h2>
-                <p className="text-sm text-primary-100">
-                  {language === 'ml' ? 'AI കൃഷി സഹായി' : 'AI Agricultural Assistant'}
-                </p>
+                <h2 className="text-xl font-bold">Krishi Sakhi</h2>
+                <p className="text-sm text-primary-100">AI Agricultural Assistant</p>
               </div>
             </div>
-            
-            <button
-              onClick={handleLanguageToggle}
-              className="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
-            >
-              {language === 'en' ? '🇮🇳 മലയാളം' : '🇬🇧 English'}
-            </button>
           </div>
 
           {/* Messages Container */}
@@ -160,9 +142,7 @@ const ChatbotPage = () => {
             {isLoading && (
               <div className="flex items-center space-x-2 text-gray-500">
                 <FaSpinner className="animate-spin" />
-                <span className="text-sm">
-                  {language === 'ml' ? 'ചിന്തിക്കുന്നു...' : 'Thinking...'}
-                </span>
+                <span className="text-sm">Thinking...</span>
               </div>
             )}
             
@@ -180,7 +160,6 @@ const ChatbotPage = () => {
             <ChatInput
               onSendMessage={handleSendMessage}
               disabled={!sessionId || isLoading}
-              language={language}
             />
           </div>
         </div>
@@ -189,7 +168,6 @@ const ChatbotPage = () => {
         <div className="lg:col-span-1">
           <PopularQuestions
             onQuestionClick={handleQuickQuestion}
-            language={language}
           />
         </div>
       </div>

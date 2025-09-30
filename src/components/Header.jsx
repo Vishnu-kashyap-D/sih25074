@@ -41,7 +41,7 @@ const Header = () => {
             <div className="text-3xl">🌱</div>
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Krishi Sakhi</h1>
-              <p className="text-sm text-gray-600 font-medium">കൃഷി സഖി - Smart Farm Analysis</p>
+              <p className="text-sm text-gray-600 font-medium">Smart Farm Analysis Platform</p>
             </div>
           </div>
 

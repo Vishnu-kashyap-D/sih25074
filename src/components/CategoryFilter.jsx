@@ -3,10 +3,7 @@ import React from 'react';
 const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
   return (
     <div className="bg-white rounded-xl shadow-md p-4">
-      <h3 className="font-semibold mb-3 text-lg">
-        Categories
-        <span className="text-sm text-gray-500 ml-2">(വിഭാഗങ്ങൾ)</span>
-      </h3>
+      <h3 className="font-semibold mb-3 text-lg">Categories</h3>
       
       <div className="space-y-2">
         <button
@@ -30,10 +27,7 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
                   : 'hover:bg-gray-100 text-gray-700'
               }`}
             >
-              <div className="flex items-center justify-between">
-                <span>{category.name}</span>
-                <span className="text-xs opacity-75">({category.malayalam})</span>
-              </div>
+              <span>{category.name}</span>
             </button>
             
             {/* Subcategories - show only if parent is selected */}
@@ -45,10 +39,7 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
                     onClick={() => onCategoryChange(sub.id)}
                     className="w-full text-left px-3 py-1.5 text-sm rounded hover:bg-gray-100 text-gray-600"
                   >
-                    <div className="flex items-center justify-between">
-                      <span>{sub.name}</span>
-                      <span className="text-xs opacity-75">({sub.malayalam})</span>
-                    </div>
+                    <span>{sub.name}</span>
                   </button>
                 ))}
               </div>

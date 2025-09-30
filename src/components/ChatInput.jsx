@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 
-const ChatInput = ({ onSendMessage, disabled, language }) => {
+const ChatInput = ({ onSendMessage, disabled }) => {
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -19,9 +19,7 @@ const ChatInput = ({ onSendMessage, disabled, language }) => {
     }
   };
 
-  const placeholder = language === 'ml'
-    ? 'നിങ്ങളുടെ ചോദ്യം ടൈപ്പ് ചെയ്യുക...'
-    : 'Type your question...';
+  const placeholder = 'Type your question...';
 
   return (
     <form onSubmit={handleSubmit} className="flex items-end space-x-2">

@@ -96,7 +96,7 @@ const SignupPage = () => {
             <FaLeaf className="text-primary-600 text-5xl" />
           </div>
           <h1 className="text-4xl font-bold text-gray-800 mb-2">Krishi Sakhi</h1>
-          <p className="text-gray-600">കൃഷി സഖി - Smart Farm Analysis</p>
+          <p className="text-gray-600">Smart Farm Analysis Platform</p>
         </div>
 
         {/* Signup Form */}

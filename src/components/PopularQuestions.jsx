@@ -2,31 +2,42 @@ import React, { useState, useEffect } from 'react';
 import { chatAPI } from '../api/services';
 import { FaQuestionCircle, FaSpinner } from 'react-icons/fa';
 
-const PopularQuestions = ({ onQuestionClick, language }) => {
+const PopularQuestions = ({ onQuestionClick }) => {
   const [questions, setQuestions] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Use hardcoded popular questions instead of API
   useEffect(() => {
-    fetchQuestions();
-  }, [language]);
-
-  const fetchQuestions = async () => {
-    setIsLoading(true);
-    setError(null);
-    
-    try {
-      const response = await chatAPI.getPopularQuestions(language);
-      if (response.success) {
-        setQuestions(response.data.questions);
+    const mockQuestions = [
+      {
+        category: 'Crop Management',
+        questions: [
+          'How to improve soil fertility for rice cultivation?',
+          'What are the best practices for pest control in vegetables?',
+          'When is the best time to plant tomatoes?'
+        ]
+      },
+      {
+        category: 'Weather & Climate',
+        questions: [
+          'How does monsoon affect crop planning?',
+          'What crops are suitable for drought conditions?',
+          'How to protect crops from excessive rainfall?'
+        ]
+      },
+      {
+        category: 'Market & Pricing',
+        questions: [
+          'What is the current market price for coconuts?',
+          'How to find buyers for organic produce?',
+          'What are the storage requirements for spices?'
+        ]
       }
-    } catch (error) {
-      console.error('Failed to fetch popular questions:', error);
-      setError('Failed to load questions');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    ];
+    setQuestions(mockQuestions);
+    setIsLoading(false);
+  }, []);
 
   if (isLoading) {
     return (
@@ -51,15 +62,11 @@ const PopularQuestions = ({ onQuestionClick, language }) => {
     <div className="bg-white rounded-xl shadow-lg p-6 overflow-y-auto max-h-[calc(100vh-200px)]">
       <div className="flex items-center space-x-2 mb-4">
         <FaQuestionCircle className="text-primary-600" size={20} />
-        <h3 className="font-bold text-lg text-gray-800">
-          {language === 'ml' ? 'സാധാരണ ചോദ്യങ്ങൾ' : 'Popular Questions'}
-        </h3>
+        <h3 className="font-bold text-lg text-gray-800">Popular Questions</h3>
       </div>
 
       <p className="text-sm text-gray-600 mb-4">
-        {language === 'ml'
-          ? 'വേഗത്തിൽ ആരംഭിക്കാൻ ഒരു ചോദ്യം ക്ലിക്ക് ചെയ്യുക'
-          : 'Click a question to get started quickly'}
+        Click a question to get started quickly
       </p>
 
       <div className="space-y-4">

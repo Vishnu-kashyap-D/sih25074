@@ -13,15 +13,15 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { path: '/', label: 'Farm Analysis', labelMl: 'ഫാം വിശകലനം', icon: FaLeaf },
-    { path: '/chatbot', label: 'AI Assistant', labelMl: 'AI സഹായി', icon: FaComments },
-    { path: '/marketplace', label: 'Marketplace', labelMl: 'മാർക്കറ്റ്', icon: FaStore },
-    { path: '/weather', label: 'Weather', labelMl: 'കാലാവസ്ഥ', icon: FaCloudSun },
+    { path: '/', label: 'Farm Analysis', icon: FaLeaf },
+    { path: '/chatbot', label: 'AI Assistant', icon: FaComments },
+    { path: '/marketplace', label: 'Marketplace', icon: FaStore },
+    { path: '/weather', label: 'Weather', icon: FaCloudSun },
   ];
   
   // Add profile if logged in
   if (isLoggedIn) {
-    navItems.push({ path: '/profile', label: 'Profile', labelMl: 'പ്രൊഫൈൽ', icon: FaUser });
+    navItems.push({ path: '/profile', label: 'Profile', icon: FaUser });
   }
 
   const toggleMobileMenu = () => {
@@ -59,7 +59,6 @@ const Navigation = () => {
                 >
                   <Icon size={20} />
                   <span className="font-medium">{item.label}</span>
-                  <span className="text-xs text-gray-500">({item.labelMl})</span>
                 </NavLink>
               );
             })}
@@ -113,10 +112,7 @@ const Navigation = () => {
                     }
                   >
                     <Icon size={20} />
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.label}</span>
-                      <span className="text-xs opacity-75">{item.labelMl}</span>
-                    </div>
+                    <span className="font-medium">{item.label}</span>
                   </NavLink>
                 );
               })}
