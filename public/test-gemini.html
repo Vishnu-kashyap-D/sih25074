@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Gemini API</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Gemini API Test</h1>
+    <button onclick="testAPI()">Test Gemini API</button>
+    <pre id="result"></pre>
+    
+    <script>
+        async function testAPI() {
+            const apiKey = 'AIzaSyDt2oax1jQxa-Relo2e8mhfpoeZ089QhEg';
+            const endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+            
+            try {
+                const response = await axios.post(
+                    `${endpoint}?key=${apiKey}`,
+                    {
+                        contents: [{
+                            parts: [{
+                                text: "Hello, I am testing Krishi Sakhi. Please respond."
+                            }]
+                        }],
+                        generationConfig: {
+                            temperature: 0.7,
+                            topK: 1,
+                            topP: 1,
+                            maxOutputTokens: 2048,
+                        }
+                    }
+                );
+                
+                document.getElementById('result').textContent = JSON.stringify(response.data, null, 2);
+                console.log('Success:', response.data);
+            } catch (error) {
+                document.getElementById('result').textContent = 'Error: ' + (error.response?.data?.error?.message || error.message);
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
