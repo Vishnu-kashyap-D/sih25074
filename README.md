@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Krishi Sakhi Frontend - Smart Farm Analysis Platform 🌱
 
 ![Krishi Sakhi](https://img.shields.io/badge/Krishi-Sakhi-green)
@@ -222,3 +223,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Note**: This is a frontend application that can work independently with mock data. For production deployment, integrate with the backend API for full functionality.
+=======
+# sih25074
+>>>>>>> 4a5124f0120430258c0ced712a51122fc7d75f7b
