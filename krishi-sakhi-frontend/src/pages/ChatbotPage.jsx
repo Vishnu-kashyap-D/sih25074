@@ -4,9 +4,11 @@ import ChatMessage from '../components/ChatMessage';
 import ChatInput from '../components/ChatInput';
 import PopularQuestions from '../components/PopularQuestions';
 import VoiceAssistant from '../components/VoiceAssistant';
+import { useLanguage } from '../context/LanguageContext';
 import { FaRobot, FaSpinner, FaKeyboard, FaMicrophone } from 'react-icons/fa';
 
 const ChatbotPage = () => {
+  const { translate } = useLanguage();
   const [sessionId, setSessionId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,13 +41,13 @@ const ChatbotPage = () => {
         {
           id: 'welcome',
           type: 'bot',
-          message: 'Hello! I am Krishi Sakhi, your agricultural assistant. How can I help you today?',
+          message: translate('chatbotWelcome', 'Hello! I am Krishi Sakhi, your agricultural assistant. How can I help you today?'),
           created_at: new Date().toISOString(),
         },
       ]);
     } catch (error) {
       console.error('Failed to initialize session:', error);
-      setError('Failed to start chat session. Please refresh the page.');
+      setError(translate('sessionError', 'Failed to start chat session. Please refresh the page.'));
     }
   };
 
@@ -79,13 +81,13 @@ const ChatbotPage = () => {
       }
     } catch (error) {
       console.error('Failed to send message:', error);
-      setError('Failed to get response. Please try again.');
+      setError(translate('responseError', 'Failed to get response. Please try again.'));
       
       // Add error message
       const errorMessage = {
         id: `error-${Date.now()}`,
         type: 'bot',
-        message: "I'm sorry, I'm having trouble responding right now. Please try again in a moment.",
+        message: translate('errorMessage', "I'm sorry, I'm having trouble responding right now. Please try again in a moment."),
         created_at: new Date().toISOString(),
         isError: true,
       };
@@ -127,7 +129,7 @@ const ChatbotPage = () => {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold">Krishi Sakhi</h2>
-                  <p className="text-sm text-primary-100">AI Agricultural Assistant</p>
+                  <p className="text-sm text-primary-100">{translate('aiAssistantSubtitle', 'AI Agricultural Assistant')}</p>
                 </div>
               </div>
             </div>
@@ -143,7 +145,7 @@ const ChatbotPage = () => {
                 }`}
               >
                 <FaKeyboard />
-                <span>Text Chat</span>
+                <span>{translate('textChat', 'Text Chat')}</span>
               </button>
               <button
                 onClick={() => setActiveTab('voice')}
@@ -154,7 +156,7 @@ const ChatbotPage = () => {
                 }`}
               >
                 <FaMicrophone />
-                <span>Voice Assistant</span>
+                <span>{translate('voiceAssistant', 'Voice Assistant')}</span>
               </button>
             </div>
           </div>
@@ -175,7 +177,7 @@ const ChatbotPage = () => {
                 {isLoading && (
                   <div className="flex items-center space-x-2 text-gray-500">
                     <FaSpinner className="animate-spin" />
-                    <span className="text-sm">Thinking...</span>
+                    <span className="text-sm">{translate('thinking', 'Thinking...')}</span>
                   </div>
                 )}
                 

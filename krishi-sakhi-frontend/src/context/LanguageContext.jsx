@@ -213,7 +213,29 @@ export const LanguageProvider = ({ children }) => {
       temperatureTrend: 'Temperature Trend',
       rainProbability: 'Rain Probability',
       high: 'High',
-      low: 'Low'
+      low: 'Low',
+      
+      // Chatbot specific
+      chatbotWelcome: 'Hello! I am Krishi Sakhi, your agricultural assistant. How can I help you today?',
+      sessionError: 'Failed to start chat session. Please refresh the page.',
+      responseError: 'Failed to get response. Please try again.',
+      errorMessage: "I'm sorry, I'm having trouble responding right now. Please try again in a moment.",
+      aiAssistantSubtitle: 'AI Agricultural Assistant',
+      thinking: 'Thinking...',
+      typeQuestion: 'Type your question...',
+      clickQuestionPrompt: 'Click a question to get started quickly',
+      cropManagement: 'Crop Management',
+      weatherClimate: 'Weather & Climate',
+      marketPricing: 'Market & Pricing',
+      soilFertilityQuestion: 'How to improve soil fertility for rice cultivation?',
+      pestControlQuestion: 'What are the best practices for pest control in vegetables?',
+      tomatoPlantingQuestion: 'When is the best time to plant tomatoes?',
+      monsoonQuestion: 'How does monsoon affect crop planning?',
+      droughtCropsQuestion: 'What crops are suitable for drought conditions?',
+      rainfallProtectionQuestion: 'How to protect crops from excessive rainfall?',
+      coconutPriceQuestion: 'What is the current market price for coconuts?',
+      organicBuyersQuestion: 'How to find buyers for organic produce?',
+      spiceStorageQuestion: 'What are the storage requirements for spices?'
     },
     hi: {
       // Navigation
@@ -338,7 +360,29 @@ export const LanguageProvider = ({ children }) => {
       temperatureTrend: 'तापमान प्रवृत्ति',
       rainProbability: 'वर्षा की संभावना',
       high: 'उच्च',
-      low: 'निम्न'
+      low: 'निम्न',
+      
+      // Chatbot specific
+      chatbotWelcome: 'नमस्ते! मैं कृषि सखी हूँ, आपकी कृषि सहायक। आज मैं आपकी कैसे मदद कर सकती हूँ?',
+      sessionError: 'चैट सेशन शुरू करने में विफल। कृपया पेज रिफ्रेश करें।',
+      responseError: 'जवाब पाने में विफल। कृपया पुन: प्रयास करें।',
+      errorMessage: 'मुझे खेद है, मुझे अभी जवाब देने में कठिनाई हो रही है। कृपया एक क्षण बाद पुन: प्रयास करें।',
+      aiAssistantSubtitle: 'AI कृषि सहायक',
+      thinking: 'सोच रहा हूँ...',
+      typeQuestion: 'अपना प्रश्न लिखें...',
+      clickQuestionPrompt: 'जल्दी शुरू करने के लिए किसी प्रश्न पर क्लिक करें',
+      cropManagement: 'फसल प्रबंधन',
+      weatherClimate: 'मौसम और जलवायु',
+      marketPricing: 'बाज़ार और मूल्य',
+      soilFertilityQuestion: 'चावल की खेती के लिए मिट्टी की उर्वरता कैसे बढ़ाएं?',
+      pestControlQuestion: 'सब्जियों में कीड़े नियंत्रण के लिए क्या सर्वोत्तम अभ्यास हैं?',
+      tomatoPlantingQuestion: 'टमाटर लगाने का सबसे अच्छा समय कब है?',
+      monsoonQuestion: 'मॉनसून फसल योजना को कैसे प्रभावित करता है?',
+      droughtCropsQuestion: 'सूखे की स्थिति के लिए कौन सी फसलें उपयुक्त हैं?',
+      rainfallProtectionQuestion: 'अत्यधिक वर्षा से फसलों का कैसे बचाव करें?',
+      coconutPriceQuestion: 'नारियल का वर्तमान बाज़ार भाव क्या है?',
+      organicBuyersQuestion: 'जैविक उत्पादों के लिए खरीदार कैसे ढूंढें?',
+      spiceStorageQuestion: 'मसालों के भंडारण की क्या आवश्यकताएं हैं?'
     },
     ta: {
       // Navigation
@@ -713,7 +757,29 @@ export const LanguageProvider = ({ children }) => {
       temperatureTrend: 'ತಾಪಮಾನ ಪ್ರವೃತ್ತಿ',
       rainProbability: 'ಮಳೆಯ ಸಾಧ್ಯತೆ',
       high: 'ಅಧಿಕ',
-      low: 'ಕಮ್ಮಿ'
+      low: 'ಕಮ್ಮಿ',
+      
+      // Chatbot specific
+      chatbotWelcome: 'ನಮಸ್ಕಾರ! ನಾನು ಕೃಷಿ ಸಖಿ, ನಿಮ್ಮ ಕೃಷಿ ಸಹಾಯಕ. ಇಂದು ನಾನು ನಿಮ್ಮನ್ನು ಹೆಗೆ ಸಹಾಯ ಮಾಡಲಲಿ?',
+      sessionError: 'ಚ್ಯಾಟ್ ಸೆಷನ್ ಪ್ರಾರಂಭಿಸುವುದು ವಿಫಲವಾಯಿತು. ದಯವಿಟ್ಟು ಪೇಜ್ ರಿಫ್ರೆಶ್ ಮಾಡಿ.',
+      responseError: 'ಸಮಾಧಾನ ಸಿಗುವುದು ವಿಫಲವಾಯಿತು. ದಯವಿಟ್ಟು ಪುನ್ರೆ ಪ್ರಯತ್ನಿಸಿ.',
+      errorMessage: 'ಕ್ಷಮಿಸಿ, ನನಗೆ ಇಮ್ಮ ಸಮಾಧಾನ ಕೊಡುವುದು ಕಷ್ಟವಾಗಿದೆ. ದಯವಿಟ್ಟು ಒಂದು ಕ್ಷಣ ಬಾದ ಪುನ್ರೆ ಪ್ರಯತ್ನಿಸಿ.',
+      aiAssistantSubtitle: 'AI ಕೃಷಿ ಸಹಾಯಕ',
+      thinking: 'ಆಲೋಚಿಸುತ್ತಿದ್ದೇನೆ...',
+      typeQuestion: 'ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಟೈಪ್ ಮಾಡಿ...',
+      clickQuestionPrompt: 'ಶೀಘ್ರವಾಗಿ ಪ್ರಾರಂಭಿಸಲು ಯಾವುದಾದರೂ ಪ್ರಶ್ನೆಗೆ ಕ್ಲಿಕ್ ಮಾಡಿ',
+      cropManagement: 'ಬೆಳೆ ವ್ಯವಸ್ಥೆ',
+      weatherClimate: 'ಹವಾಮಾನ ಮತ್ತು ವಾತಾವರಣ',
+      marketPricing: 'ಮಾರುಕಟ್ಟೆ ಮತ್ತು ಬೆಲೆ',
+      soilFertilityQuestion: 'ಅಕ್ಕಿ ಬೆಳೆಗೆ ಮಣ್ಣಿನ ಉರ್ವರತೆಯನ್ನು ಹೆಗೆ ಮೇಲೆಮಾಡಬಹುದು?',
+      pestControlQuestion: 'ತರಕಾರಿಗಳಲ್ಲಿ ಕೀಟ ನಿಯಂತ್ರಣಕ್ಕೆ ಉತ್ತಮ ಅಭ್ಯಾಸಗಳು ಯಾವು?',
+      tomatoPlantingQuestion: 'ಟಮಾಟೊಗಳನ್ನು ನಟುವ ಉತ್ತಮ ಸಮಯ ಯಾವಾಗ?',
+      monsoonQuestion: 'ವರ್ಷಾಕಾಲ ಬೆಳೆ ಯೋಜನೆಯನ್ನು ಹೆಗೆ ಪ್ರಾವಿಸುತ್ತದೆ?',
+      droughtCropsQuestion: 'ಬಣ್ಣಳ ಪರಿಸ್ಥಿತಿಗೆ ಯಾವ ಬೆಳೆಗಳು ಯೋಗ್ಯ?',
+      rainfallProtectionQuestion: 'ಅಧಿಕ ಮಳೆಯಿಂದ ಬೆಳೆಗಳ ರಕ್ಷಣೆ ಹೆಗೆ ಮಾಡಬಹುದು?',
+      coconutPriceQuestion: 'ಕೊಬ್ಬರಿಗೆ ಸದ್ಯನ ಮಾರುಕಟ್ಟೆ ಬೆಲೆ ಯೆಷ್ಟು?',
+      organicBuyersQuestion: 'ಜೈವಿಕ ಉತ್ಪನ್ನಗಳಿಗೆ ಕೊಂಡಗం ವರನ್ನು ಹೆಗೆ ನೋಡಬಹುದು?',
+      spiceStorageQuestion: 'ಮಸಾಲೆಗಳ ಸಂಗ್ರಹಣೆಗೆ ಯಾವ ಅವಶ್ಯಕತೆಗಳು?'
     },
     gu: {
       // Navigation

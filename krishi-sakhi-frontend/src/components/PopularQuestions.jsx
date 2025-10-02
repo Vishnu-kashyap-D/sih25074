@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { chatAPI } from '../api/services';
+import { useLanguage } from '../context/LanguageContext';
 import { FaQuestionCircle, FaSpinner } from 'react-icons/fa';
 
 const PopularQuestions = ({ onQuestionClick }) => {
+  const { translate } = useLanguage();
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,27 +13,27 @@ const PopularQuestions = ({ onQuestionClick }) => {
   useEffect(() => {
     const mockQuestions = [
       {
-        category: 'Crop Management',
+        category: translate('cropManagement', 'Crop Management'),
         questions: [
-          'How to improve soil fertility for rice cultivation?',
-          'What are the best practices for pest control in vegetables?',
-          'When is the best time to plant tomatoes?'
+          translate('soilFertilityQuestion', 'How to improve soil fertility for rice cultivation?'),
+          translate('pestControlQuestion', 'What are the best practices for pest control in vegetables?'),
+          translate('tomatoPlantingQuestion', 'When is the best time to plant tomatoes?')
         ]
       },
       {
-        category: 'Weather & Climate',
+        category: translate('weatherClimate', 'Weather & Climate'),
         questions: [
-          'How does monsoon affect crop planning?',
-          'What crops are suitable for drought conditions?',
-          'How to protect crops from excessive rainfall?'
+          translate('monsoonQuestion', 'How does monsoon affect crop planning?'),
+          translate('droughtCropsQuestion', 'What crops are suitable for drought conditions?'),
+          translate('rainfallProtectionQuestion', 'How to protect crops from excessive rainfall?')
         ]
       },
       {
-        category: 'Market & Pricing',
+        category: translate('marketPricing', 'Market & Pricing'),
         questions: [
-          'What is the current market price for coconuts?',
-          'How to find buyers for organic produce?',
-          'What are the storage requirements for spices?'
+          translate('coconutPriceQuestion', 'What is the current market price for coconuts?'),
+          translate('organicBuyersQuestion', 'How to find buyers for organic produce?'),
+          translate('spiceStorageQuestion', 'What are the storage requirements for spices?')
         ]
       }
     ];
@@ -44,7 +46,7 @@ const PopularQuestions = ({ onQuestionClick }) => {
       <div className="bg-white rounded-xl shadow-lg p-6">
         <div className="flex items-center justify-center space-x-2 text-gray-500">
           <FaSpinner className="animate-spin" />
-          <span>Loading...</span>
+          <span>{translate('loading', 'Loading...')}</span>
         </div>
       </div>
     );
@@ -62,11 +64,11 @@ const PopularQuestions = ({ onQuestionClick }) => {
     <div className="bg-white rounded-xl shadow-lg p-6 overflow-y-auto max-h-[calc(100vh-200px)]">
       <div className="flex items-center space-x-2 mb-4">
         <FaQuestionCircle className="text-primary-600" size={20} />
-        <h3 className="font-bold text-lg text-gray-800">Popular Questions</h3>
+        <h3 className="font-bold text-lg text-gray-800">{translate('popularQuestions', 'Popular Questions')}</h3>
       </div>
 
       <p className="text-sm text-gray-600 mb-4">
-        Click a question to get started quickly
+        {translate('clickQuestionPrompt', 'Click a question to get started quickly')}
       </p>
 
       <div className="space-y-4">

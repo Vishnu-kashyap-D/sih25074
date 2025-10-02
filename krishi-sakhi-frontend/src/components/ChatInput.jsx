@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { FaPaperPlane } from 'react-icons/fa';
 
 const ChatInput = ({ onSendMessage, disabled }) => {
+  const { translate } = useLanguage();
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -19,7 +21,7 @@ const ChatInput = ({ onSendMessage, disabled }) => {
     }
   };
 
-  const placeholder = 'Type your question...';
+  const placeholder = translate('typeQuestion', 'Type your question...');
 
   return (
     <form onSubmit={handleSubmit} className="flex items-end space-x-2">
