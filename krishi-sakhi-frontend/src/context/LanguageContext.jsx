@@ -207,7 +207,13 @@ export const LanguageProvider = ({ children }) => {
       // Header content
       platformTagline: 'Smart Farm Analysis Platform',
       signedInAs: 'Signed in as',
-      menu: 'Menu'
+      menu: 'Menu',
+      
+      // Weather specific
+      temperatureTrend: 'Temperature Trend',
+      rainProbability: 'Rain Probability',
+      high: 'High',
+      low: 'Low'
     },
     hi: {
       // Navigation
@@ -326,7 +332,13 @@ export const LanguageProvider = ({ children }) => {
       // Header content
       platformTagline: 'स्मार्ट फार्म विश्लेषण प्लेटफार्म',
       signedInAs: 'इस रूप में साइन इन',
-      menu: 'मेनू'
+      menu: 'मेनू',
+      
+      // Weather specific
+      temperatureTrend: 'तापमान प्रवृत्ति',
+      rainProbability: 'वर्षा की संभावना',
+      high: 'उच्च',
+      low: 'निम्न'
     },
     ta: {
       // Navigation
@@ -445,7 +457,13 @@ export const LanguageProvider = ({ children }) => {
       // Header content
       platformTagline: 'ஸ்மார்ட் பண்ணை பகுப்பாய்வு மன்சம்',
       signedInAs: 'இதுகாக உள்ளே கிறீர்',
-      menu: 'மெனு'
+      menu: 'மெனு',
+      
+      // Weather specific
+      temperatureTrend: 'வெப்பநிலை ப்ரவ௃த்தி',
+      rainProbability: 'மழை சாத்தியத்தை',
+      high: 'அதிகம்',
+      low: 'குறைவு'
     },
     te: {
       // Navigation
@@ -564,7 +582,13 @@ export const LanguageProvider = ({ children }) => {
       // Header content
       platformTagline: 'స్మార్ట్ ఫార్మ్ అనాలిసిస్ ప్లాట్‌ఫారమ్',
       signedInAs: 'దీనిగా సైన్ ఇన్ అయ్యారు',
-      menu: 'మెనూ'
+      menu: 'మెనూ',
+      
+      // Weather specific
+      temperatureTrend: 'ఉష్ణోగ్రత ప్రవృత్తి',
+      rainProbability: 'వర్షం సాధ్యత',
+      high: 'అధికం',
+      low: 'తక్కువ'
     },
     kn: {
       // Navigation
@@ -683,7 +707,13 @@ export const LanguageProvider = ({ children }) => {
       // Header content
       platformTagline: 'ಸ್ಮಾರ್ಟ್ ಫಾರ್ಮ್ ಅನಾಲಿಸಿಸ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್',
       signedInAs: 'ಇದರಿಂದ ಸೈನ್ ಇನ್ ಮಾಡಿಕೊಣ್ಡಿದ್ದೀರಿ',
-      menu: 'ಮೆನು'
+      menu: 'ಮೆನು',
+      
+      // Weather specific
+      temperatureTrend: 'ತಾಪಮಾನ ಪ್ರವೃತ್ತಿ',
+      rainProbability: 'ಮಳೆಯ ಸಾಧ್ಯತೆ',
+      high: 'ಅಧಿಕ',
+      low: 'ಕಮ್ಮಿ'
     },
     gu: {
       // Navigation

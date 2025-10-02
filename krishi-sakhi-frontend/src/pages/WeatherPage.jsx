@@ -399,7 +399,7 @@ const WeatherPage = () => {
         <div className="space-y-6">
           {/* Temperature Chart */}
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="font-semibold text-gray-800 mb-4">Temperature Trend</h3>
+            <h3 className="font-semibold text-gray-800 mb-4">{translate('temperatureTrend', 'Temperature Trend')}</h3>
             <div className="h-64">
               {temperatureChartData && (
                 <Line data={temperatureChartData} options={chartOptions} />
@@ -409,7 +409,7 @@ const WeatherPage = () => {
 
           {/* Rain Probability Chart */}
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="font-semibold text-gray-800 mb-4">Rain Probability</h3>
+            <h3 className="font-semibold text-gray-800 mb-4">{translate('rainProbability', 'Rain Probability')}</h3>
             <div className="h-64">
               {rainChartData && (
                 <Bar data={rainChartData} options={chartOptions} />
@@ -431,11 +431,11 @@ const WeatherPage = () => {
                   <p className="text-sm text-gray-600 mb-3">{day.condition}</p>
                   <div className="flex justify-around text-sm">
                     <div>
-                      <p className="text-gray-500">High</p>
+                      <p className="text-gray-500">{translate('high', 'High')}</p>
                       <p className="font-semibold text-red-600">{Math.round(day.temperature.max)}°C</p>
                     </div>
                     <div>
-                      <p className="text-gray-500">Low</p>
+                      <p className="text-gray-500">{translate('low', 'Low')}</p>
                       <p className="font-semibold text-blue-600">{Math.round(day.temperature.min)}°C</p>
                     </div>
                   </div>
