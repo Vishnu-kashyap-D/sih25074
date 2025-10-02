@@ -574,6 +574,8 @@ export const LanguageProvider = ({ children }) => {
       marketplace: 'ಮಾರುಕಟ್ಟೆ',
       weather: 'ಹವಾಮಾನ',
       profile: 'ಪ್ರೊಫೈಲ್',
+      home: 'ಹೋಮ್',
+      community: 'ಸಮುದಾಯ',
       
       // Common
       loading: 'ಲೋಡ್ ಆಗುತ್ತಿದೆ...',
@@ -585,23 +587,103 @@ export const LanguageProvider = ({ children }) => {
       edit: 'ಸಂಪಾದಿಸು',
       search: 'ಹುಡುಕು',
       filter: 'ಫಿಲ್ಟರ್',
+      submit: 'ಸಲ್ಲಿಸು',
+      back: 'ಹಿಂದೆ',
+      next: 'ಮುಂದಿನದು',
+      previous: 'ಹಿಂದಿನದು',
+      close: 'ಮುಚ್ಚಿರಿ',
+      
+      // Home Page
+      welcomeTitle: 'ಕೃಷಿ ಸಖಿಗೆ ಸ್ವಾಗತ',
+      welcomeSubtitle: 'ಮೇಲೆ ವಿಳೆವಾರಿ ಮತ್ತು ನಿಲೈಯಾದ ಕೃಷಿಗೆ ನಿಮ್ಮ AI-ಚಾಲಿತ ಕೃಷಿ ಸಹಾಯಕ',
+      getStarted: 'ಪ್ರಾರಂಭಿಸಿ',
+      learnMore: 'ಹೆಚ್ಚಿನ ತೆಳಿಯಿರಿ',
+      
+      // Features
+      featuresTitle: 'ಆಧುನಿಕ ರೈತರಿಗಗೆ ಶಕ್ತಿವನ್ತ ವೈಶಿಷ್ಟ್ಯಗಳು',
+      smartAnalysis: 'ಸ್ಮಾರ್ಟ್ ಕೃಷಿ ವಿಶ್ಲೇಷಣೆ',
+      smartAnalysisDesc: 'ನಿಮ್ಮ ಕೃಷಿ ಪರಿಸ್ಥಿತಿಗಳು, ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಮತ್ತು ಬೆಳೆ ಶಿಫಾರಸುಗಳ AI-ಚಾಲಿತ ವಿಶ್ಲೇಷಣೆ',
+      cropMonitoring: 'ಬೆಳೆ ಆರೋಗ್ಯ ನಿರೀಕ್ಷಣೆ',
+      cropMonitoringDesc: 'ನಕ್ಷತ್ರ ಚಿತ್ರ ಗುರುತಿಸುವಿಕೆಯನ್ನು ವಸೕ ಕೆ ಸಹ ಈಗ ದಿನ ಕ್ಷ ನಿರೀಕ್ಷಣೆ ಮತ್ತು ರೋಗ ಪತ್ತೆಹಿಡಿಸುವಿಕೆ',
+      weatherInsights: 'ಹವಾಮಾನ ಅಂತರ್ದೃಷ್ಟಿಗಳು',
+      weatherInsightsDesc: 'ನಿಮ್ಮ ಪ್ರದೇಶಕ್ಕೆ ಸದುಸ್ವ ಹವಾಮಾನ ಪೂರ್ವಾನುಮಾನಗಳು ಮತ್ತು ಕೃಷಿ ಸಲಹೆಗಳು',
+      marketplaceAccess: 'ಮಾರುಕಟ್ಟೆ ಉಪಯೋಗ',
+      marketplaceAccessDesc: 'ಬೀಜಗಳು, ಸಾಧನಗಳು ಮತ್ತು ಉತ್ಪನ್ನಗಳಿಗೆ ಕೊಂಡಗಂ ವ್ರ ಮತ್ತು ಮಾರಾಟಗಾರರನ್ನ ಪರಸ್ವ ಇಂಡು ಚೆಂದು ನ ಉ಴ಲಕ್ಗೆ ತ',
+      aiAssistant: 'AI ಸಹಾಯಕ',
+      aiAssistantDesc: '24/7 AI-ಚಾಲಿತ ಕೃಷಿ ಸಲಹೆ ಮತ್ತು ನಿಮ್ಮ ಸ್ಥಾನೀಯ ಭಾಷೆಯಲ್ಲಿ ಮಾರ್ಗದರ್ಶನ',
+      communitySupport: 'ಸಮುದಾಯ ಸಹಾಯ',
+      communitySupportDesc: 'ಜ್ಞಾನ ಸಾಝಾಕರಣಕ್ಕೆ ಸಹ ರೈತರು ಮತ್ತು ನಿಪುಣರು ಜೊತೆ ಜೋಡಿಸಿಕೊಳ್ಳಿ',
       
       // Farm Analysis
       selectLocation: 'ನಕ್ಷೆಯಲ್ಲಿ ನಿಮ್ಮ ಕೃಷಿ ಸ್ಥಳವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
       farmArea: 'ಕೃಷಿ ಪ್ರದೇಶ (ಎಕರೆ)',
       analyzeFarm: 'ನನ್ನ ಕೃಷಿಯನ್ನು ವಿಶ್ಲೇಷಿಸು',
       analysisReport: 'ವಿಶ್ಲೇಷಣೆ ವರದಿ',
+      soilHealth: 'ಮಣ್ಣಿನ ಆರೋಗ್ಯ',
+      cropRecommendations: 'ಬೆಳೆ ಶಿಫಾರಸುಗಳು',
+      
+      // Crop Analysis
+      uploadImage: 'ಬೆಳೆ ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+      dragDropImage: 'ನಿಮ್ಮ ಚಿತ್ರವನ್ನು ಇಲ್ಲಿಗೆ ಎಜೆದು ಹಿಂದಿರಿ, ಅಕ ರಸ್ತೆ ಎಂಚುಕಳಿಕೆ ಕ್ಲಿಕ್ ಮಾಡಿ',
+      analyzeImage: 'ಚಿತ್ರವನ್ನು ವಿಶ್ಲೇಷಿಸಿ',
+      cropHealth: 'ಬೆಳೆ ಆರೋಗ್ಯ',
+      diseaseDetection: 'ರೋಗ ವಾಟಗುಂಡದಿ',
+      healthScore: 'ಆರೋಗ್ಯ ಕ್ಱೆ',
+      recommendations: 'ಶಿಫಾರಸುಗಳು',
+      
+      // Weather
+      currentWeather: 'ಸದ್ಯನ ಹವಾಮಾನ',
+      forecast: 'ಪೂರ್ವಾನುಮಾನ',
+      temperature: 'ತಾಪಮಾನ',
+      humidity: 'ಆರ್ದ್ರತೆ',
+      windSpeed: 'ಗಾಳಿಯ ವೇಗ',
+      rainfall: 'ಮಳೆ',
       
       // Chatbot
       askQuestion: 'ಕೃಷಿಯ ಬಗ್ಗೆ ಏನನ್ನೂ ಕೇಳಿ...',
       popularQuestions: 'ಜನಪ್ರಿಯ ಪ್ರಶ್ನೆಗಳು',
+      voiceAssistant: 'ಸ್ವರ ಸಹಾಯಕ',
+      textChat: 'ಪಠ್ಯ ಗುಡುಗುಡಲವಲ',
+      startListening: 'ಕೇಳುವುದು ಪ್ರಾರಂಭಿಸಿ',
+      stopListening: 'ಕೇಳುವುದು ನಿಲ್ಲಿಸಿ',
       
       // Marketplace
       products: 'ಉತ್ಪನ್ನಗಳು',
       categories: 'ವರ್ಗಗಳು',
-      priceRange: 'ಬೆಲೆ ವ್ yaಕ್ತಿ',
+      priceRange: 'ಬೆಲೆ ವ್ಯಾಪ್ತಿ',
       location: 'ಸ್ಥಳ',
-      seller: 'ಮಾರಾಟಗಾರ'
+      seller: 'ಮಾರಾಟಗಾರ',
+      buyNow: 'ಇಬ್ಬರೂ ಕೊಂಡಗಳಿ',
+      addToCart: 'ಕಾರ್ಟ್‌ಗೆ ಸೇರಿಸಿ',
+      
+      // Community
+      communityForum: 'ಸಮುದಾಯ ಚರ್ಚೆಮಂಚ',
+      askCommunity: 'ಸಮುದಾಯನ್ನು ಕೇಳಿಸಿ',
+      shareExperience: 'ಅನುಭವವನ್ನು ಸಾಝಾಮಾಡಿಕೊಳ್ಳಿ',
+      expertAdvice: 'ನಿಪುಣರ ಸಲಹೆ',
+      
+      // Profile
+      myProfile: 'ನನ್ನ ಪ್ರೊಫೈಲ್',
+      settings: 'ಸೆಟ್ಟಿಂಗ್ಗಳು',
+      language: 'ಭಾಷೆ',
+      notifications: 'ಅಧಿಸೂಚನೆಗಳು',
+      logout: 'ಲಾಗ್ ಆಉಟ್',
+      
+      // Additional HomePage content
+      login: 'ಲಾಗಿನ್',
+      signUp: 'ಸೈನ್ ಅಪ್',
+      accessDashboard: 'ಡ್ಯಾಷ್‌ಬೋರ್ಡ್ ಅಕ್ಸೆಸ್',
+      featuresSubtitle: 'ನಿಮ್ಮ ಕೃಷಿ ಪದ್ಧತಿಗಳನ್ನು ಆಧುನಿಕದಖೆಚ್ ಚ೯ ಸಂಗ್ರ ಸಾಧನಗಳು ಮತ್ತು ಅಂತರ್ದೃಷ್ಟಿಗಳು',
+      explore: 'ಅನ್ವೇಷಿಸಿ',
+      ctaTitle: 'ನಿಮ್ಮ ಕೃಷಿಯನ್ನು ಬದಲಾಯಿಸಲು ಸಿದ್ಧರಾಗಿದ್ದೀರಾ?',
+      ctaSubtitle: 'ಕೃಷಿ ಸಖಿಯನ್ನು ಉಪಯೋಗಿಸಿ ತಮ್ಮ ವಿಳೆವಾರಿ ಮತ್ತು ಆದಾಯವನ್ನು ಮೇಲೇಪಡಿಸಿಕೊಣ್ಡಿರುವ ಸಾವಿರಾರು ರೈತರನ್ನು ಜೋಡಿಸಿಕೊಳ್ಳಿ',
+      startAnalysis: 'ಇಬ್ಬರೂ ವಿಶ್ಲೇಷಣೆ ಪ್ರಾರಂಭಿಸಿ',
+      loginToStart: 'ಪ್ರಾರಂಭಿಸಲು ಲಾಗಿನ್ ಮಾಡಿ',
+      
+      // Header content
+      platformTagline: 'ಸ್ಮಾರ್ಟ್ ಫಾರ್ಮ್ ಅನಾಲಿಸಿಸ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್',
+      signedInAs: 'ಇದರಿಂದ ಸೈನ್ ಇನ್ ಮಾಡಿಕೊಣ್ಡಿದ್ದೀರಿ',
+      menu: 'ಮೆನು'
     },
     gu: {
       // Navigation
