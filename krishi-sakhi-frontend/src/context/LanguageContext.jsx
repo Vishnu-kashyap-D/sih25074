@@ -455,6 +455,8 @@ export const LanguageProvider = ({ children }) => {
       marketplace: 'మార్కెట్‌ప్లేస్',
       weather: 'వాతావరణం',
       profile: 'ప్రొఫైల్',
+      home: 'హోమ్',
+      community: 'కమ్యూనిటీ',
       
       // Common
       loading: 'లోడ్ అవుతోంది...',
@@ -466,23 +468,103 @@ export const LanguageProvider = ({ children }) => {
       edit: 'సవరించు',
       search: 'వెతకు',
       filter: 'ఫిల్టర్',
+      submit: 'సమర్పించు',
+      back: 'వెనుకకు',
+      next: 'తదుపరి',
+      previous: 'మునుపటి',
+      close: 'మూసివేయు',
+      
+      // Home Page
+      welcomeTitle: 'కృషి సఖిలో మీకు స్వాగతం',
+      welcomeSubtitle: 'మెరుగైన దిగుబడి మరియు స్థిరమైన వ్యవసాయం కోసం మీ AI-నడిచే వ్యవసాయ సహాయకుడు',
+      getStarted: 'ప్రారంభించండి',
+      learnMore: 'మరింత తెలుసుకోండి',
+      
+      // Features
+      featuresTitle: 'ఆధునిక రైతులకు శక్తివంతమైన లక్షణాలు',
+      smartAnalysis: 'స్మార్ట్ పొలం విశ్లేషణ',
+      smartAnalysisDesc: 'మీ పొలం పరిస్థితులు, మట్టి ఆరోగ్యం మరియు పంట సిఫార్సుల AI-నడిచే విశ్లేషణ',
+      cropMonitoring: 'పంట ఆరోగ్య పర్యవేక్షణ',
+      cropMonitoringDesc: 'అధునాతన చిత్ర గుర్తింపును ఉపయోగించి రియల్-టైమ్ పర్యవేక్షణ మరియు వ్యాధి గుర్తింపు',
+      weatherInsights: 'వాతావరణ అవగాహనలు',
+      weatherInsightsDesc: 'మీ ప్రాంతానికి ఖచ్చితమైన వాతావరణ అంచనాలు మరియు వ్యవసాయ సలహాలు',
+      marketplaceAccess: 'మార్కెట్‌ప్లేస్ యాక్సెస్',
+      marketplaceAccessDesc: 'విత్తనాలు, పరికరాలు మరియు ఉత్పత్తుల కోసం కొనుగోలుదారులు మరియు అమ్మకందారులతో కనెక్ట్ అవ్వండి',
+      aiAssistant: 'AI సహాయకుడు',
+      aiAssistantDesc: '24/7 AI-నడిచే వ్యవసాయ సలహా మరియు మీ స్థానిక భాషలో మార్గదర్శకత్వం',
+      communitySupport: 'కమ్యూనిటీ మద్దతు',
+      communitySupportDesc: 'జ్ఞాన భాగస్వామ్యం కోసం తోటి రైతులు మరియు నిపుణులతో కనెక్ట్ అవ్వండి',
       
       // Farm Analysis
       selectLocation: 'మ్యాప్‌లో మీ పొలం ప్రాంతాన్ని ఎంచుకోండి',
       farmArea: 'పొలం వైశాల్యం (ఎకరాలు)',
       analyzeFarm: 'నా పొలాన్ని విశ్లేషించు',
       analysisReport: 'విశ్లేషణ నివేదిక',
+      soilHealth: 'మట్టి ఆరోగ్యం',
+      cropRecommendations: 'పంట సిఫార్సులు',
+      
+      // Crop Analysis
+      uploadImage: 'పంట చిత్రాన్ని అప్‌లోడ్ చేయండి',
+      dragDropImage: 'మీ చిత్రాన్ని ఇక్కడ లాగి వదలండి, లేదా ఎంచుకోవడానికి క్లిక్ చేయండి',
+      analyzeImage: 'చిత్రాన్ని విశ్లేషించండి',
+      cropHealth: 'పంట ఆరోగ్యం',
+      diseaseDetection: 'వ్యాధి గుర్తింపు',
+      healthScore: 'ఆరోగ్య స్కోర్',
+      recommendations: 'సిఫార్సులు',
+      
+      // Weather
+      currentWeather: 'ప్రస్తుత వాతావరణం',
+      forecast: 'అంచనా',
+      temperature: 'ఉష్ణోగ్రత',
+      humidity: 'తేమ',
+      windSpeed: 'గాలి వేగం',
+      rainfall: 'వర్షపాతం',
       
       // Chatbot
       askQuestion: 'వ్యవసాయం గురించి ఏదైనా అడగండి...',
       popularQuestions: 'ప్రసిద్ధ ప్రశ్నలు',
+      voiceAssistant: 'వాయిస్ అసిస్టెంట్',
+      textChat: 'టెక్స్ట్ చాట్',
+      startListening: 'వినడం ప్రారంభించు',
+      stopListening: 'వినడం ఆపు',
       
       // Marketplace
       products: 'ఉత్పత్తులు',
       categories: 'వర్గాలు',
       priceRange: 'ధర పరిధి',
       location: 'స్థానం',
-      seller: 'అమ్మకందారు'
+      seller: 'అమ్మకందారు',
+      buyNow: 'ఇప్పుడు కొనండి',
+      addToCart: 'కార్ట్‌కు జోడించు',
+      
+      // Community
+      communityForum: 'కమ్యూనిటీ ఫోరమ్',
+      askCommunity: 'కమ్యూనిటీని అడగండి',
+      shareExperience: 'అనుభవాన్ని పంచుకోండి',
+      expertAdvice: 'నిపుణుల సలహా',
+      
+      // Profile
+      myProfile: 'నా ప్రొఫైల్',
+      settings: 'సెట్టింగులు',
+      language: 'భాష',
+      notifications: 'నోటిఫికేషన్లు',
+      logout: 'లాగ్ అవుట్',
+      
+      // Additional HomePage content
+      login: 'లాగిన్',
+      signUp: 'సైన్ అప్',
+      accessDashboard: 'డ్యాష్‌బోర్డ్ యాక్సెస్',
+      featuresSubtitle: 'మీ వ్యవసాయ పద్ధతులను ఆధునికీకరించడానికి సమగ్ర సాధనాలు మరియు అంతర్దృష్టులు',
+      explore: 'అన్వేషించు',
+      ctaTitle: 'మీ వ్యవసాయాన్ని మార్చడానికి సిద్ధంగా ఉన్నారా?',
+      ctaSubtitle: 'కృషి సఖిని ఉపయోగించి వారి దిగుబడిలు మరియు ఆదాయాన్ని మెరుగుపరుచుకున్న వేలాది రైతులతో చేరండి',
+      startAnalysis: 'ఇప్పుడు విశ్లేషణ ప్రారంభించు',
+      loginToStart: 'ప్రారంభించడానికి లాగిన్ చేయండి',
+      
+      // Header content
+      platformTagline: 'స్మార్ట్ ఫార్మ్ అనాలిసిస్ ప్లాట్‌ఫారమ్',
+      signedInAs: 'దీనిగా సైన్ ఇన్ అయ్యారు',
+      menu: 'మెనూ'
     },
     kn: {
       // Navigation

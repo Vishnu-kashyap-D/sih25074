@@ -1,4 +1,4 @@
-# Krishi Sakhi (കൃഷി സഖി) - Smart Farm Analysis Platform
+# Krishi Sakhi  - Smart Farm Analysis Platform
 
 A comprehensive web application that provides instant farm land profiling and analysis using geospatial data. Built for the Smart India Hackathon 2025.
 
