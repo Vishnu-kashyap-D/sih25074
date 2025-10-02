@@ -88,7 +88,7 @@ export const LanguageProvider = ({ children }) => {
     }
   };
 
-  // Basic translations
+  // Comprehensive translations
   const translations = {
     en: {
       // Navigation
@@ -98,6 +98,8 @@ export const LanguageProvider = ({ children }) => {
       marketplace: 'Marketplace',
       weather: 'Weather',
       profile: 'Profile',
+      home: 'Home',
+      community: 'Community',
       
       // Common
       loading: 'Loading...',
@@ -109,23 +111,103 @@ export const LanguageProvider = ({ children }) => {
       edit: 'Edit',
       search: 'Search',
       filter: 'Filter',
+      submit: 'Submit',
+      back: 'Back',
+      next: 'Next',
+      previous: 'Previous',
+      close: 'Close',
+      
+      // Home Page
+      welcomeTitle: 'Welcome to Krishi Sakhi',
+      welcomeSubtitle: 'Your AI-powered farming companion for better yields and sustainable agriculture',
+      getStarted: 'Get Started',
+      learnMore: 'Learn More',
+      
+      // Features
+      featuresTitle: 'Powerful Features for Modern Farmers',
+      smartAnalysis: 'Smart Farm Analysis',
+      smartAnalysisDesc: 'AI-powered analysis of your farm conditions, soil health, and crop recommendations',
+      cropMonitoring: 'Crop Health Monitoring',
+      cropMonitoringDesc: 'Real-time monitoring and disease detection using advanced image recognition',
+      weatherInsights: 'Weather Insights',
+      weatherInsightsDesc: 'Accurate weather forecasts and agricultural advisories for your region',
+      marketplaceAccess: 'Marketplace Access',
+      marketplaceAccessDesc: 'Connect with buyers and sellers for seeds, equipment, and produce',
+      aiAssistant: 'AI Assistant',
+      aiAssistantDesc: '24/7 AI-powered farming advice and guidance in your local language',
+      communitySupport: 'Community Support',
+      communitySupportDesc: 'Connect with fellow farmers and experts for knowledge sharing',
       
       // Farm Analysis
       selectLocation: 'Select your farm location on the map',
       farmArea: 'Farm Area (acres)',
       analyzeFarm: 'Analyze My Farm',
       analysisReport: 'Analysis Report',
+      soilHealth: 'Soil Health',
+      cropRecommendations: 'Crop Recommendations',
+      
+      // Crop Analysis
+      uploadImage: 'Upload Crop Image',
+      dragDropImage: 'Drag and drop your image here, or click to select',
+      analyzeImage: 'Analyze Image',
+      cropHealth: 'Crop Health',
+      diseaseDetection: 'Disease Detection',
+      healthScore: 'Health Score',
+      recommendations: 'Recommendations',
+      
+      // Weather
+      currentWeather: 'Current Weather',
+      forecast: 'Forecast',
+      temperature: 'Temperature',
+      humidity: 'Humidity',
+      windSpeed: 'Wind Speed',
+      rainfall: 'Rainfall',
       
       // Chatbot
       askQuestion: 'Ask me anything about farming...',
       popularQuestions: 'Popular Questions',
+      voiceAssistant: 'Voice Assistant',
+      textChat: 'Text Chat',
+      startListening: 'Start Listening',
+      stopListening: 'Stop Listening',
       
       // Marketplace  
       products: 'Products',
       categories: 'Categories',
       priceRange: 'Price Range',
       location: 'Location',
-      seller: 'Seller'
+      seller: 'Seller',
+      buyNow: 'Buy Now',
+      addToCart: 'Add to Cart',
+      
+      // Community
+      communityForum: 'Community Forum',
+      askCommunity: 'Ask Community',
+      shareExperience: 'Share Experience',
+      expertAdvice: 'Expert Advice',
+      
+      // Profile
+      myProfile: 'My Profile',
+      settings: 'Settings',
+      language: 'Language',
+      notifications: 'Notifications',
+      logout: 'Logout',
+      
+      // Additional HomePage content
+      login: 'Login',
+      signUp: 'Sign Up',
+      accessDashboard: 'Access Dashboard',
+      featuresSubtitle: 'Comprehensive tools and insights to modernize your farming practices',
+      explore: 'Explore',
+      ctaTitle: 'Ready to Transform Your Farming?',
+      ctaSubtitle: 'Join thousands of farmers who are already using Krishi Sakhi to improve their yields and income',
+      startAnalysis: 'Start Analysis Now',
+      loginToStart: 'Login to Start',
+      
+      // Header content
+      platformTagline: 'Smart Farm Analysis Platform',
+      signedInAs: 'Signed in as',
+      menu: 'Menu'
     },
     hi: {
       // Navigation
@@ -135,6 +217,8 @@ export const LanguageProvider = ({ children }) => {
       marketplace: 'बाज़ार',
       weather: 'मौसम',
       profile: 'प्रोफाइल',
+      home: 'होम',
+      community: 'समुदाय',
       
       // Common
       loading: 'लोड हो रहा है...',
@@ -146,23 +230,103 @@ export const LanguageProvider = ({ children }) => {
       edit: 'संपादित करें',
       search: 'खोजें',
       filter: 'फिल्टर',
+      submit: 'जमा करें',
+      back: 'वापस',
+      next: 'आगे',
+      previous: 'पिछला',
+      close: 'बंद करें',
+      
+      // Home Page
+      welcomeTitle: 'कृषि सखी में आपका स्वागत है',
+      welcomeSubtitle: 'बेहतर उत्पादन और टिकाऊ कृषि के लिए आपका AI-संचालित कृषि साथी',
+      getStarted: 'शुरू करें',
+      learnMore: 'और जानें',
+      
+      // Features
+      featuresTitle: 'आधुनिक किसानों के लिए शक्तिशाली फीचर्स',
+      smartAnalysis: 'स्मार्ट फार्म विश्लेषण',
+      smartAnalysisDesc: 'आपकी खेत की स्थिति, मिट्टी की सेहत और फसल की सिफारिशों का AI-संचालित विश्लेषण',
+      cropMonitoring: 'फसल स्वास्थ्य निगरानी',
+      cropMonitoringDesc: 'उन्नत इमेज पहचान का उपयोग करके रीयल-टाइम निगरानी और रोग का पता लगाना',
+      weatherInsights: 'मौसम की जानकारी',
+      weatherInsightsDesc: 'आपके क्षेत्र के लिए सटीक मौसम पूर्वानुमान और कृषि सलाह',
+      marketplaceAccess: 'बाज़ार पहुंच',
+      marketplaceAccessDesc: 'बीज, उपकरण और उत्पादों के लिए खरीदारों और विक्रेताओं से जुड़ें',
+      aiAssistant: 'AI सहायक',
+      aiAssistantDesc: '24/7 AI-संचालित खेती की सलाह और आपकी स्थानीय भाषा में मार्गदर्शन',
+      communitySupport: 'समुदायिक सहायता',
+      communitySupportDesc: 'ज्ञान साझाकरण के लिए साथी किसानों और विशेषज्ञों से जुड़ें',
       
       // Farm Analysis
       selectLocation: 'मानचित्र पर अपने खेत का स्थान चुनें',
       farmArea: 'खेत का क्षेत्र (एकड़)',
       analyzeFarm: 'मेरे खेत का विश्लेषण करें',
       analysisReport: 'विश्लेषण रिपोर्ट',
+      soilHealth: 'मिट्टी की सेहत',
+      cropRecommendations: 'फसल की सिफारिशें',
+      
+      // Crop Analysis
+      uploadImage: 'फसल की तस्वीर अपलोड करें',
+      dragDropImage: 'अपनी तस्वीर यहाँ खींचें और छोड़ें, या चुनने के लिए क्लिक करें',
+      analyzeImage: 'तस्वीर का विश्लेषण करें',
+      cropHealth: 'फसल स्वास्थ्य',
+      diseaseDetection: 'रोग का पता लगाना',
+      healthScore: 'स्वास्थ्य स्कोर',
+      recommendations: 'सिफारिशें',
+      
+      // Weather
+      currentWeather: 'वर्तमान मौसम',
+      forecast: 'पूर्वानुमान',
+      temperature: 'तापमान',
+      humidity: 'आर्द्रता',
+      windSpeed: 'हवा की गति',
+      rainfall: 'वर्षा',
       
       // Chatbot
       askQuestion: 'खेती के बारे में कुछ भी पूछें...',
       popularQuestions: 'लोकप्रिय प्रश्न',
+      voiceAssistant: 'आवाज सहायक',
+      textChat: 'टेक्स्ट चैट',
+      startListening: 'सुनना शुरू करें',
+      stopListening: 'सुनना बंद करें',
       
       // Marketplace
       products: 'उत्पाद',
       categories: 'श्रेणियां',
       priceRange: 'मूल्य सीमा',
       location: 'स्थान',
-      seller: 'विक्रेता'
+      seller: 'विक्रेता',
+      buyNow: 'अभी खरीदें',
+      addToCart: 'कार्ट में जोड़ें',
+      
+      // Community
+      communityForum: 'समुदायिक फोरम',
+      askCommunity: 'समुदाय से पूछें',
+      shareExperience: 'अनुभव साझा करें',
+      expertAdvice: 'विशेषज्ञ सलाह',
+      
+      // Profile
+      myProfile: 'मेरा प्रोफाइल',
+      settings: 'सेटिंग्स',
+      language: 'भाषा',
+      notifications: 'सूचनाएं',
+      logout: 'लॉगआउट',
+      
+      // Additional HomePage content
+      login: 'लॉगिन',
+      signUp: 'साइन अप',
+      accessDashboard: 'डैशबोर्ड एक्सेस करें',
+      featuresSubtitle: 'आपकी खेती की पद्धतियों को आधुनिक बनाने के लिए व्यापक उपकरण और अंतर्दृष्टि',
+      explore: 'खोजें',
+      ctaTitle: 'अपनी खेती को बदलने के लिए तैयार हैं?',
+      ctaSubtitle: 'हजारों किसानों के साथ जुड़ें जो पहले से ही कृषि सखी का उपयोग करके अपनी पैदावार और आय में सुधार कर रहे हैं',
+      startAnalysis: 'अब विश्लेषण शुरू करें',
+      loginToStart: 'शुरू करने के लिए लॉगिन करें',
+      
+      // Header content
+      platformTagline: 'स्मार्ट फार्म विश्लेषण प्लेटफार्म',
+      signedInAs: 'इस रूप में साइन इन',
+      menu: 'मेनू'
     },
     ta: {
       // Navigation
@@ -172,6 +336,8 @@ export const LanguageProvider = ({ children }) => {
       marketplace: 'சந்தை',
       weather: 'வானிலை',
       profile: 'சுயவிவரம்',
+      home: 'முகப்பு',
+      community: 'சமூகம்',
       
       // Common
       loading: 'ஏற்றுகிறது...',
@@ -183,23 +349,103 @@ export const LanguageProvider = ({ children }) => {
       edit: 'திருத்து',
       search: 'தேடு',
       filter: 'வடிகட்டி',
+      submit: 'சமர்ப்பி',
+      back: 'பின்னால்',
+      next: 'அடுத்தது',
+      previous: 'முந்தையது',
+      close: 'மூடு',
+      
+      // Home Page
+      welcomeTitle: 'கிருஷி சகியில் உங்களை வரவேற்கிறோம்',
+      welcomeSubtitle: 'சிறந்த விளைச்சல் மற்றும் நிலையான விவசாயத்திற்கான உங்கள் AI-இயங்கும் விவசாய துணைவன்',
+      getStarted: 'தொடங்குங்கள்',
+      learnMore: 'மேலும் அறிக',
+      
+      // Features
+      featuresTitle: 'நவீன விவசாயிகளுக்கான சக்திவாய்ந்த அம்சங்கள்',
+      smartAnalysis: 'ஸ்மார்ட் பண்ணை பகுப்பாய்வு',
+      smartAnalysisDesc: 'உங்கள் பண்ணை நிலைமைகள், மண் ஆரோக்கியம் மற்றும் பயிர் பரிந்துரைகளின் AI-இயங்கும் பகுப்பாய்வு',
+      cropMonitoring: 'பயிர் ஆரோக்கிய கண்காணிப்பு',
+      cropMonitoringDesc: 'மேம்பட்ட பட அங்கீகாரத்தைப் பயன்படுத்தி நிகழ்நேர கண்காணிப்பு மற்றும் நோய் கண்டறிதல்',
+      weatherInsights: 'வானிலை நுண்ணறிவு',
+      weatherInsightsDesc: 'உங்கள் பகுதிக்கான துல்லியமான வானிலை முன்னறிவிப்புகள் மற்றும் விவசாய ஆலோசனைகள்',
+      marketplaceAccess: 'சந்தை அணுகல்',
+      marketplaceAccessDesc: 'விதைகள், உபகரணங்கள் மற்றும் விளைபொருட்களுக்கான வாங்குபவர்கள் மற்றும் விற்பனையாளர்களுடன் இணைக்கவும்',
+      aiAssistant: 'AI உதவியாளர்',
+      aiAssistantDesc: '24/7 AI-இயங்கும் விவசாய ஆலோசனை மற்றும் உங்கள் உள்ளூர் மொழியில் வழிகாட்டுதல்',
+      communitySupport: 'சமூக ஆதரவு',
+      communitySupportDesc: 'அறிவு பகிர்வுக்காக சக விவசாயிகள் மற்றும் நிபுணர்களுடன் இணைக்கவும்',
       
       // Farm Analysis
       selectLocation: 'வரைபடத்தில் உங்கள் பண்ணையின் இடத்தைத் தேர்ந்தெடுக்கவும்',
       farmArea: 'பண்ணை பகுதி (ஏக்கர்)',
       analyzeFarm: 'என் பண்ணையை பகுப்பாய்வு செய்',
       analysisReport: 'பகுப்பாய்வு அறிக்கை',
+      soilHealth: 'மண் ஆரோக்கியம்',
+      cropRecommendations: 'பயிர் பரிந்துரைகள்',
+      
+      // Crop Analysis
+      uploadImage: 'பயிர் படத்தை பதிவேற்றுக',
+      dragDropImage: 'உங்கள் படத்தை இங்கே இழுத்து விடுக, அல்லது தேர்வு செய்ய கிளிக் செய்யவும்',
+      analyzeImage: 'படத்தை பகுப்பாய்வு செய்',
+      cropHealth: 'பயிர் ஆரோக்கியம்',
+      diseaseDetection: 'நோய் கண்டறிதல்',
+      healthScore: 'ஆரோக்கிய மதிப்பெண்',
+      recommendations: 'பரிந்துரைகள்',
+      
+      // Weather
+      currentWeather: 'தற்போதைய வானிலை',
+      forecast: 'முன்னறிவிப்பு',
+      temperature: 'வெப்பநிலை',
+      humidity: 'ஈரப்பதம்',
+      windSpeed: 'காற்று வேகம்',
+      rainfall: 'மழைப்பொழிவு',
       
       // Chatbot
       askQuestion: 'விவசாயம் பற்றி எதையும் கேளுங்கள்...',
       popularQuestions: 'பிரபலமான கேள்விகள்',
+      voiceAssistant: 'குரல் உதவியாளர்',
+      textChat: 'உரை அரட்டை',
+      startListening: 'கேட்க தொடங்கு',
+      stopListening: 'கேட்பதை நிறுத்து',
       
       // Marketplace
       products: 'பொருட்கள்',
       categories: 'வகைகள்',
       priceRange: 'விலை வரம்பு',
       location: 'இடம்',
-      seller: 'விற்பனையாளர்'
+      seller: 'விற்பனையாளர்',
+      buyNow: 'இப்போது வாங்கு',
+      addToCart: 'கார்ட்டில் சேர்க்கவும்',
+      
+      // Community
+      communityForum: 'சமூக மன்றம்',
+      askCommunity: 'சமூகத்திடம் கேளுங்கள்',
+      shareExperience: 'அனுபவத்தைப் பகிர்ந்து கொள்ளுங்கள்',
+      expertAdvice: 'நிபுணர் ஆலோசனை',
+      
+      // Profile
+      myProfile: 'என் சுயவிவரம்',
+      settings: 'அமைப்புகள்',
+      language: 'மொழி',
+      notifications: 'அறிவிப்புகள்',
+      logout: 'வெளியேறு',
+      
+      // Additional HomePage content
+      login: 'லாகின்',
+      signUp: 'கணக்கின் தொடங்கி',
+      accessDashboard: 'டாஷ்போர்ட் அணுகல்',
+      featuresSubtitle: 'உங்கள் விவசாய அளவீட்டை நவீனமாக்க விரிவான கருவிகள் மற்றும் கார்னைத் திறன்கள்',
+      explore: 'அறிக',
+      ctaTitle: 'உங்கள் விவசாயத்தை மாற்ற தயாரா?',
+      ctaSubtitle: 'க௃ஷி சகியின் பயன்பாட்டை ஏற்கனவே செய்து தங்கள் விளைச்சல் மற்றும் வருமானத்தை மேம்படுத்திவரும் ஆயிரக்கணக்கான விவசாயிகளுடன் சேரவும்',
+      startAnalysis: 'இப்போது பகுப்பாய்வு தொடங்கு',
+      loginToStart: 'தொடங்க லாகின் செய்',
+      
+      // Header content
+      platformTagline: 'ஸ்மார்ட் பண்ணை பகுப்பாய்வு மன்சம்',
+      signedInAs: 'இதுகாக உள்ளே கிறீர்',
+      menu: 'மெனு'
     },
     te: {
       // Navigation

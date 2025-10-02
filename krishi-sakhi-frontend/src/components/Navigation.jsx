@@ -91,7 +91,7 @@ const Navigation = () => {
         >
           <div className="p-6">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-xl font-bold text-primary-600">Menu</h2>
+              <h2 className="text-xl font-bold text-primary-600">{translate('menu', 'Menu')}</h2>
               <button
                 onClick={toggleMobileMenu}
                 className="text-gray-500 hover:text-gray-700"

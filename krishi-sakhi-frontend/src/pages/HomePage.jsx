@@ -17,43 +17,43 @@ const HomePage = () => {
   const features = [
     {
       icon: FaLeaf,
-      title: 'Farm Analysis',
-      description: 'Click on map to analyze soil health, water resources, and get personalized recommendations',
+      title: translate('smartAnalysis', 'Smart Farm Analysis'),
+      description: translate('smartAnalysisDesc', 'AI-powered analysis of your farm conditions, soil health, and crop recommendations'),
       path: '/farm-analysis',
       color: 'green'
     },
     {
       icon: FaMicroscope,
-      title: 'Crop Analysis',
-      description: 'Upload crop images for instant AI-powered disease detection and treatment advice',
+      title: translate('cropAnalysis', 'Crop Analysis'),
+      description: translate('cropMonitoringDesc', 'Real-time monitoring and disease detection using advanced image recognition'),
       path: '/crop-analysis',
       color: 'purple'
     },
     {
       icon: FaComments,
-      title: 'AI Assistant',
-      description: 'Get 24/7 farming advice from our intelligent chatbot in your language',
+      title: translate('aiAssistant', 'AI Assistant'),
+      description: translate('aiAssistantDesc', '24/7 AI-powered farming advice and guidance in your local language'),
       path: '/chatbot',
       color: 'blue'
     },
     {
       icon: FaStore,
-      title: 'Marketplace',
-      description: 'Buy and sell agricultural products directly with fair prices',
+      title: translate('marketplace', 'Marketplace'),
+      description: translate('marketplaceAccessDesc', 'Connect with buyers and sellers for seeds, equipment, and produce'),
       path: '/marketplace',
       color: 'orange'
     },
     {
       icon: FaCloudSun,
-      title: 'Weather Insights',
-      description: 'Real-time weather data and agricultural forecasts for better planning',
+      title: translate('weatherInsights', 'Weather Insights'),
+      description: translate('weatherInsightsDesc', 'Accurate weather forecasts and agricultural advisories for your region'),
       path: '/weather',
       color: 'cyan'
     },
     {
       icon: FaUsers,
-      title: 'Community & Collaboration',
-      description: 'Connect with farmers, experts, and share success stories',
+      title: translate('communitySupport', 'Community Support'),
+      description: translate('communitySupportDesc', 'Connect with fellow farmers and experts for knowledge sharing'),
       path: '/community',
       color: 'indigo'
     }
@@ -78,31 +78,25 @@ const HomePage = () => {
                 className="bg-white/90 backdrop-blur text-primary-600 px-6 py-2 rounded-full font-semibold hover:bg-white transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center gap-2"
               >
                 <FaSignInAlt />
-                Login
+                {translate('login', 'Login')}
               </button>
               <button
                 onClick={() => navigate('/signup')}
                 className="bg-primary-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center gap-2"
               >
                 <FaUserPlus />
-                Sign Up
+                {translate('signUp', 'Sign Up')}
               </button>
             </div>
           )}
           
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gray-800">Data-Driven</span>
-              <br />
-              <span className="text-primary-600">AI-Powered Farming</span>
-              <br />
-              <span className="text-gray-800">Decisions, Simplified</span>
+              {translate('welcomeTitle', 'Welcome to Krishi Sakhi')}
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Krishi Sakhi transforms complex agricultural and groundwater data into actionable insights. 
-              Our platform helps farmers optimize irrigation, select suitable crops, and protect their 
-              harvests using cutting-edge AI.
+              {translate('welcomeSubtitle', 'Your AI-powered farming companion for better yields and sustainable agriculture')}
             </p>
             
             <button 
@@ -110,7 +104,7 @@ const HomePage = () => {
               className="bg-primary-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-3"
             >
               <FaRocket />
-              {isLoggedIn ? 'Access Dashboard' : 'Get Started'}
+              {isLoggedIn ? translate('accessDashboard', 'Access Dashboard') : translate('getStarted', 'Get Started')}
             </button>
           </div>
         </div>
@@ -120,10 +114,10 @@ const HomePage = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Empowering Farmers with Technology
+            {translate('featuresTitle', 'Powerful Features for Modern Farmers')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive tools and insights to modernize your farming practices
+            {translate('featuresSubtitle', 'Comprehensive tools and insights to modernize your farming practices')}
           </p>
         </div>
         
@@ -147,7 +141,7 @@ const HomePage = () => {
               </p>
               
               <div className="mt-4 text-primary-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Explore →
+                {translate('explore', 'Explore')} →
               </div>
             </div>
           ))}
@@ -161,17 +155,17 @@ const HomePage = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-20 -translate-y-20"></div>
           <div className="relative z-10">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Transform Your Farming?
+              {translate('ctaTitle', 'Ready to Transform Your Farming?')}
             </h3>
             <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
-              Join thousands of farmers who are already using Krishi Sakhi to improve their yields and income
+              {translate('ctaSubtitle', 'Join thousands of farmers who are already using Krishi Sakhi to improve their yields and income')}
             </p>
             <button 
               onClick={() => navigate(isLoggedIn ? '/farm-analysis' : '/login')}
               className="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 inline-flex items-center gap-2"
             >
               <FaChartLine />
-              {isLoggedIn ? 'Start Analysis Now' : 'Login to Start'}
+              {isLoggedIn ? translate('startAnalysis', 'Start Analysis Now') : translate('loginToStart', 'Login to Start')}
             </button>
           </div>
         </div>

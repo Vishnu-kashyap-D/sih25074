@@ -44,7 +44,7 @@ const Header = () => {
             <div className="text-3xl">🌱</div>
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Krishi Sakhi</h1>
-              <p className="text-sm text-gray-600 font-medium">Smart Farm Analysis Platform</p>
+              <p className="text-sm text-gray-600 font-medium">{translate('platformTagline', 'Smart Farm Analysis Platform')}</p>
             </div>
           </div>
 
@@ -69,7 +69,7 @@ const Header = () => {
                 {showUserMenu && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 z-50">
                     <div className="px-4 py-2 border-b border-gray-200">
-                      <p className="text-sm text-gray-600">Signed in as</p>
+                      <p className="text-sm text-gray-600">{translate('signedInAs', 'Signed in as')}</p>
                       <p className="text-sm font-semibold text-gray-800 truncate">{user.email}</p>
                     </div>
                     <button
@@ -80,14 +80,14 @@ const Header = () => {
                       className="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-2"
                     >
                       <FaUser />
-                      <span>My Profile</span>
+                      <span>{translate('myProfile', 'My Profile')}</span>
                     </button>
                     <button
                       onClick={handleLogout}
                       className="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-red-600"
                     >
                       <FaSignOutAlt />
-                      <span>Logout</span>
+                      <span>{translate('logout', 'Logout')}</span>
                     </button>
                   </div>
                 )}
@@ -98,7 +98,7 @@ const Header = () => {
                 className="flex items-center space-x-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors font-medium"
               >
                 <FaSignInAlt />
-                <span>Login</span>
+                <span>{translate('login', 'Login')}</span>
               </button>
             )}
             </div>
